@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Rustam Yakshigulov">
+  <meta name="keywords" content="Путешествия, Кусто, достопримечательности">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Места, где хотел побывать Кусто</title>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__logo"></div>
+            <div class="header__line"></div>
+        </header>
+        
+        <main class="content">
+            <section class="profile">
+                <div class="profile__block">
+                    <img src="./images/avatar.jpg" alt="Фото Кусто" class="profile__avatar">
+                    <div class="profile__info">
+                        <div class="profile__all">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="profile__edit"></button>
+                        </div>
+                        <p class="profile__text">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="profile__button-border"></button>
+            </section>
+            <section class="element">
+                <ul class="element__list">
+                    
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <h2 class="footer__autor">&copy; 2020 Mesto Russia</h2>
+        </footer>
+
+        <div class="popup">
+            <div class="popup-container">
+                <div class="popup__close"></div>
+                <form class="popup__content form" action="#" method="POST" name="editProfile" novalidate>
+                    <h2 class="popup__title" >Редактировать профиль</h2>
+                    <div class="popup__control">
+                        <input type="text" class="popup__prof-name popup__input" required minlength="2" maxlength="40" name="namePrCards">
+                        <span class="popup__error"></span>
+                    </div>
+                    <div class="popup__control">
+                        <input type="text" class="popup__prof-text popup__input" required minlength="2" maxlength="200" name="linkPrCards">
+                        <span class="popup__error"></span>
+                    </div>
+                    <button class="popup__button-save" type="submit" disabled>Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup-mesto">
+            <div class="popup-container">
+                <div class="popup__close"></div>
+                <form class="popup__content form" name="addElCards" novalidate>
+                    <h2 class="popup__title">Новое место</h2>
+                    <div class="popup__control">
+                        <input type="text" class="popup__prof-name popup__input" placeholder="Название" name="nameElCards"  required minlength="2" maxlength="30">
+                        <span class="popup__error"></span>
+                    </div>
+                    <div class="popup__control">
+                        <input type="url" class="popup__prof-text popup__input" placeholder="Ссылка на карточку" name="linkElCards" required>
+                        <span class="popup__error"></span>
+                    </div>
+                    
+                    <button class="popup__button-save popup__but-disabled" type="submit" disabled>Создать</button>
+                </form>
+                
+            </div>
+        </div>
+        <div class="popupimg">
+            <figure class="popupimg__bloc">
+                <div class="popup__close"></div>
+                <img src="#" alt="#" class="popupimg__foto">
+                <p class="popupimg__name"></p>
+            </figure>
+        </div>
+    </div>
+  <template class="element-template">
+    <li class="element__group">
+        <button class="element__deletebut"></button>
+        <img src="#" alt="#" class="element__foto">
+        <div class="element__all">
+            <h2 class="element__text"></h2>
+            <button class="element__social-like"></button>
+        </div>
+    </li>
+</template>
+<script type="text/javascript" src="./scripts/validate.js"></script>
+<script type="text/javascript" src="./scripts/utils.js"></script>
+<script type="text/javascript" src="./scripts/index.js"></script>
+</body>
+</html>

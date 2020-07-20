@@ -1,0 +1,12 @@
+.element__social-likeactiv {
+    background-image: url(../../../images/Vectorlikeend.svg);
+    border: 0;
+    width: 21px;
+    height: 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    padding: 0;
+    box-shadow: none;
+}

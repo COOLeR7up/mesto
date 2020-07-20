@@ -1,0 +1,28 @@
+.profile__button-border {
+    justify-self: flex-end;
+    width: 150px;
+    height: 50px;
+    border: #ffffff 2px solid;
+    border-radius: 2px;
+    background-color: black;
+    background-image: url(../../../images/plus.svg);
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.profile__button-border:hover {
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-image: url(../../../images/plus_grea.svg);
+}
+
+@media only screen and (max-width: 600px) {
+    .profile__button-border {
+        width: 282px;
+        height: 50px;
+        background-size: 16px;
+    }
+  }
