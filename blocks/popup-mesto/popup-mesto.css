@@ -1,3 +1,15 @@
+@import url(./popup-container/popup-container.css);
+@import url(./__button-save/popup-mesto__button-save.css);
+@import url(./__close/popup-mesto__close.css);
+@import url(./__content/popup-mesto__content.css);
+@import url(./__error/popup-mesto__error.css);
+@import url(./__prof-name/popup-mesto__prof-name.css);
+@import url(./__prof-text/popup-mesto__prof-text.css);
+@import url(./__title/popup-mesto__title.css);
+@import url(./__button-save/popup-mesto__button-save.css);
+@import url(./__but-disabled/popup-mesto__but-disabled.css);
+
+
 .popup-mesto {
     position: fixed;
     top: 0;

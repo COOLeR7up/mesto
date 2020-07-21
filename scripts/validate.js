@@ -34,7 +34,6 @@ const showInputError = (form, input, errorSelector, controlSelector, errorMessag
         checkInputValidity(form, input, errorSelector, controlSelector);
         toggleButtonState(form, buttonElement)
       });
-      
     });
   };
   
@@ -43,7 +42,6 @@ const showInputError = (form, input, errorSelector, controlSelector, errorMessag
     formList.forEach((form) => {
         form.addEventListener('submit', (evt) => {
             evt.preventDefault();
-            
         });    
         setEventListeners(form, controlSelector, inputSelector, errorSelector);
   });
@@ -64,10 +62,10 @@ function toggleButtonState(form, buttonElement) {
         buttonElement.classList.add('popup__button-save');
 
     } else {
-        console.log(buttonElement);
         buttonElement.setAttribute('disabled', true);
         buttonElement.classList.add('popup__but-disabled');
         buttonElement.classList.remove('popup__button-save');
 
     }
+  
   };

@@ -1,4 +1,4 @@
-.popup__prof-text {
+.popup-mesto__prof-name {
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
@@ -10,5 +10,6 @@
     border-color: #FFF;
     max-width: 358px;
     width: 100%;
-    margin-top: 30px;
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 5px;
 }
