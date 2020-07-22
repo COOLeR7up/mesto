@@ -1,12 +1,9 @@
 
 const showInputError = (form, input, errorSelector, controlSelector, errorMessage) => {          //выводит ошибку валидации
     const errorElement = input.closest(controlSelector).querySelector(errorSelector);
-
     input.classList.add('form__input_type_error');
     errorElement.textContent = errorMessage;
     errorElement.classList.add('form__input-error_active');
-    
-
   };
   
   const hideInputError = (form, input, errorSelector, controlSelector) => {                     //убирает ошибку валиадации
@@ -14,7 +11,6 @@ const showInputError = (form, input, errorSelector, controlSelector, errorMessag
     input.classList.remove('form__input_type_error');
     errorElement.classList.remove('form__input-error_active');
     errorElement.textContent = '';
-    
   };
   
   const checkInputValidity = (form, input, errorSelector, controlSelector) => {                 //выбора валидации
@@ -42,7 +38,7 @@ const showInputError = (form, input, errorSelector, controlSelector, errorMessag
     formList.forEach((form) => {
         form.addEventListener('submit', (evt) => {
             evt.preventDefault();
-        });    
+        });
         setEventListeners(form, controlSelector, inputSelector, errorSelector);
   });
   }
@@ -56,16 +52,12 @@ enableValidation({
 
 function toggleButtonState(form, buttonElement) {
     if (form.checkValidity()) {
-        console.log(buttonElement);
         buttonElement.removeAttribute('disabled');
         buttonElement.classList.remove('popup__but-disabled');
         buttonElement.classList.add('popup__button-save');
-
     } else {
         buttonElement.setAttribute('disabled', true);
         buttonElement.classList.add('popup__but-disabled');
         buttonElement.classList.remove('popup__button-save');
-
     }
-  
   };

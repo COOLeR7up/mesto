@@ -23,7 +23,7 @@ const popupImgCloseButton = popupFigure.querySelector('.popup-img__close');
 const socialLike = document.querySelectorAll('.element__social-like');
 
 initialCards.forEach(function(element) {
-    addCards(element.name, element.link);
+    generateCard(element.name, element.link);
 });
 const figureFoto = cardsList.querySelectorAll('.element__foto');
 
@@ -72,16 +72,16 @@ function formSubmitHandler (evt) {
 
 formElement.addEventListener('submit', formSubmitHandler);
 
-function addCards(name, link) {
+function generateCard(name, link) {
     const card = cardTemplateElement.content.cloneNode(true); 
     card.querySelector('.element__delete-but').addEventListener('click', deleteCard);
     card.querySelector('.element__text').textContent = name;
     card.querySelector('.element__foto').alt = name;
     card.querySelector('.element__foto').src = link;
-    makeCard(card);
+    addCard(card);
 }
 
-function makeCard(card) {
+function addCard(card) {
     cardsList.prepend(card);
 }
 
@@ -108,7 +108,8 @@ socialLike.forEach((activButton) => {
 });
 
 document.body.addEventListener('keyup', function (e) {
-    if (e.keyCode === 27) {
+    const escCode = 27;
+    if (e.keyCode === escCode) {
         popup.classList.remove('popup__opened');
         editPlacePopup.classList.remove('popup-mesto__opened');
         popupFigure.classList.remove('popup__opened');
@@ -120,7 +121,7 @@ cardFormElement.addEventListener('submit', e => {
     const name = cardInputElement.value;
     const link = cardInputLinkEl.value;
     cardFormElement.reset();
-    addCards(name, link);
+    generateCard(name, link);
     placePopupToggle();
     
 })

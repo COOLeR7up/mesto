@@ -20,6 +20,8 @@
     .popup-mesto__close {
         width: 30px;
         height: 30px;
+        right: -29px;
+        top: -29px;
         
     }
   }
