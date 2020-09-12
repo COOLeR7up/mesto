@@ -51,6 +51,7 @@ const placePopupToggle = function () {
 const closePopupOverlay = function (event) {
     if (event.target !== event.currentTarget) {return}
     popupToggle();
+    
 }
 
 const closePlacePopupOverlay = function (event) {
@@ -73,11 +74,12 @@ function formSubmitHandler (evt) {
 formElement.addEventListener('submit', formSubmitHandler);
 
 function generateCard(name, link) {
-    const card = cardTemplateElement.content.cloneNode(true); 
+    const card = cardTemplateElement.content.cloneNode(true);
     card.querySelector('.element__delete-but').addEventListener('click', deleteCard);
     card.querySelector('.element__text').textContent = name;
     card.querySelector('.element__foto').alt = name;
     card.querySelector('.element__foto').src = link;
+
     addCard(card);
 }
 
@@ -89,6 +91,8 @@ function deleteCard(event) {
     const card = event.target.closest('.element__group');
     card.remove();
 }
+
+
 
 figureFoto.forEach((activeFoto) => {
     activeFoto.addEventListener('click', (evt) => {

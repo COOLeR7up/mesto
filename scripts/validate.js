@@ -28,7 +28,7 @@ const showInputError = (form, input, errorSelector, controlSelector, errorMessag
     inputList.forEach((input) => {
         input.addEventListener('input', function () {
         checkInputValidity(form, input, errorSelector, controlSelector);
-        toggleButtonState(form, buttonElement)
+        toggleButtonState(form, buttonElement);
       });
     });
   };
