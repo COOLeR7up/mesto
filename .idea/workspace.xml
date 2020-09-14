@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utils.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1hHj5RLhowJhY2BWiIeQMvJ6e4p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="" />
+      <created>1599674728007</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599674728007</updated>
+      <workItem from="1599674729436" duration="2439000" />
+      <workItem from="1599845881621" duration="810000" />
+      <workItem from="1599911942499" duration="18000" />
+      <workItem from="1599913960788" duration="5714000" />
+      <workItem from="1600087876031" duration="5919000" />
+    </task>
+    <task id="LOCAL-00001" summary="class first try">
+      <created>1599917557907</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599917557908</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="class first try" />
+    <option name="LAST_COMMIT_MESSAGE" value="class first try" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="467" y="210" key="#Notifications" timestamp="1599917602010">
+      <screen x="0" y="0" width="1422" height="770" />
+    </state>
+    <state x="467" y="210" key="#Notifications/0.0.1422.770@0.0.1422.770" timestamp="1599917602010" />
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1599917555913">
+      <screen x="0" y="0" width="1422" height="770" />
+    </state>
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1599917555913" />
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2" timestamp="1599982351898">
+      <screen x="0" y="0" width="1422" height="770" />
+    </state>
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1599982351898" />
+    <state x="370" y="174" key="run.anything.popup" timestamp="1599917063322">
+      <screen x="0" y="0" width="1422" height="770" />
+    </state>
+    <state x="370" y="174" key="run.anything.popup/0.0.1422.770@0.0.1422.770" timestamp="1599917063322" />
+    <state x="374" y="91" width="672" height="678" key="search.everywhere.popup" timestamp="1599914589417">
+      <screen x="0" y="0" width="1422" height="770" />
+    </state>
+    <state x="374" y="91" width="672" height="678" key="search.everywhere.popup/0.0.1422.770@0.0.1422.770" timestamp="1599914589417" />
+  </component>
+</project>
