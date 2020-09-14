@@ -2,7 +2,7 @@
 
 class Card {
     constructor(title, linkImg, template) {
-        this.title = name
+        this.title = title
         this.linkImg = linkImg
         this.template = template
     }
@@ -22,6 +22,7 @@ class Card {
 
         popupImgFoto.src = this.linkImg;
         popupImgText.textContent = this.title
+
     }
 
     _likeHandler(event) {
@@ -32,15 +33,15 @@ class Card {
     _handlerInit(card) {
         // Delete
         card.querySelector('.element__delete-but')
-            .addEventListener('click', this._deleteCardHandler);
+            .addEventListener('click', this._deleteCardHandler.bind(this));
 
         // Like
         card.querySelector('.element__social-like')
-            .addEventListener('click', this._likeHandler)
+            .addEventListener('click', this._likeHandler.bind(this))
 
         // Photo View
         card.querySelector('.element__foto')
-            .addEventListener('click', this._photoViewHandler)
+            .addEventListener('click', this._photoViewHandler.bind(this))
 
         return card
     }
