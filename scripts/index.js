@@ -25,10 +25,12 @@ const popupToggle = function (event) {
         jobInput.value = profText.textContent;
     }
     popup.classList.toggle('popup__opened');
+    addCardValidator()
 };
 
 const popupFigureToggle = function () {
     popupFigure.classList.toggle('popup__opened');
+    addCardValidator()
 }
 function closesPopup(){
     popup.classList.remove('popup__opened');
@@ -49,15 +51,6 @@ const closePopupOverlay = function (event) {
     closesPopup();
 }
 
-const closePlacePopupOverlay = function (event) {
-    if (event.target !== event.currentTarget) {return}
-    closesPopup();
-}
-
-const closeFigurePopupOverlay = function (event) {
-    if (event.target !== event.currentTarget) {return}
-    closesPopup();
-}
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -68,12 +61,14 @@ function formSubmitHandler (evt) {
 
 formElement.addEventListener('submit', formSubmitHandler);
 
-document.body.addEventListener('keyup', function (e) {
-    const escCode = 27;
-    if (e.keyCode === escCode) {
-        closesPopup()
-    };
-}, false);
+const escHandlerclosepopup = e => {
+        const escCode = 27;
+        if (e.keyCode === escCode) {
+            closesPopup()
+        };
+}
+
+document.body.addEventListener('keydown', escHandlerclosepopup);
 
 function addCard(title, link) {
     const templateSelector = '.element-template'
@@ -84,25 +79,24 @@ function addCard(title, link) {
     cardsList.prepend(card.generate())
 }
 
-cardFormElement.addEventListener('submit', e => {
+const formElementHandler = e => {
     e.preventDefault();
     const title = cardInputElement.value;
     const link = cardInputLinkEl.value;
     cardFormElement.reset();
     addCard(title, link)
 
-
     placePopupToggle();
+}
 
-})
-
+cardFormElement.addEventListener('submit', formElementHandler)
 popupOpenButton.addEventListener('click', popupToggle)
 popupCloseButton.addEventListener('click', popupToggle)
 popup.addEventListener('click', closePopupOverlay);
-editPlacePopup.addEventListener('click', closePlacePopupOverlay);
+editPlacePopup.addEventListener('click', closePopupOverlay);
+popupFigure.addEventListener('click', closePopupOverlay);
 openPlacePopupButton.addEventListener('click', placePopupToggle);
 closePlacePopupButton.addEventListener('click', placePopupToggle);
-popupFigure.addEventListener('click', closeFigurePopupOverlay);
 popupImgCloseButton.addEventListener('click', popupFigureToggle);
 
 
@@ -111,3 +105,15 @@ initialCards.forEach(el => {
     addCard(el.title, el.link)
 })
 
+function addCardValidator() {
+    const settingAddCardValidation = {
+        form: '.form',
+        input: '.popup__input',
+        errorSelector: '.popup__error',
+        controlSelector: '.popup__control',
+        button: '.popup__button-save',
+    }
+
+    const addCardValidation = new FormValidator(settingAddCardValidation)
+    addCardValidation.enableValidation()
+}
