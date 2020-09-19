@@ -23,15 +23,15 @@ const popupToggle = function (event) {
     if (!popup.classList.contains('popup__opened')) {
         nameInput.value = profName.textContent;
         jobInput.value = profText.textContent;
+        addCardValidator()
     }
     popup.classList.toggle('popup__opened');
-    addCardValidator()
-};
 
+};
+// Закрытие попоп фото
 const popupFigureToggle = function () {
-    popupFigure.classList.toggle('popup__opened');
-    addCardValidator()
-}
+   popupFigure.classList.toggle('popup__opened');
+ }
 function closesPopup(){
     popup.classList.remove('popup__opened');
     editPlacePopup.classList.remove('popup-mesto__opened');
@@ -43,6 +43,7 @@ const placePopupToggle = function () {
     cardFormSubmitButton.setAttribute('disabled', true);
     cardFormSubmitButton.classList.add('popup__but-disabled');
     cardFormSubmitButton.classList.remove('popup__button-save');
+    addPlaceValidator()
 }
 
 //закрытие попапов на оверлей.
@@ -105,9 +106,23 @@ initialCards.forEach(el => {
     addCard(el.title, el.link)
 })
 
+function addPlaceValidator() {
+    const settingAddPlaceValidation = {
+        form: '.popup-mesto__content',
+        input: '.popup__input',
+        errorSelector: '.popup__error',
+        controlSelector: '.popup__control',
+        button: '.popup-mesto__button-save',
+    }
+
+    const addPlaceValidation = new FormValidator(settingAddPlaceValidation)
+    addPlaceValidation.enableValidation()
+}
+
+
 function addCardValidator() {
     const settingAddCardValidation = {
-        form: '.form',
+        form: '.popup__content',
         input: '.popup__input',
         errorSelector: '.popup__error',
         controlSelector: '.popup__control',

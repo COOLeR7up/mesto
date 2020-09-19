@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/FormValidator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/validate.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,8 @@
       <workItem from="1599911942499" duration="18000" />
       <workItem from="1599913960788" duration="5714000" />
       <workItem from="1600087876031" duration="6119000" />
-      <workItem from="1600332003230" duration="7399000" />
+      <workItem from="1600332003230" duration="7546000" />
+      <workItem from="1600516385267" duration="3773000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -70,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600094296964</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="class validate">
+      <created>1600353933568</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600353933568</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,21 +85,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="class first try" />
     <MESSAGE value="class second try" />
-    <option name="LAST_COMMIT_MESSAGE" value="class second try" />
+    <MESSAGE value="class validate" />
+    <option name="LAST_COMMIT_MESSAGE" value="class validate" />
   </component>
   <component name="WindowStateProjectService">
     <state x="467" y="210" key="#Notifications" timestamp="1599917602010">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="467" y="210" key="#Notifications/0.0.1422.770@0.0.1422.770" timestamp="1599917602010" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1600094292545">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1600353931410">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1600094292545" />
-    <state x="305" y="119" key="Vcs.Push.Dialog.v2" timestamp="1600094299064">
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1600353931410" />
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2" timestamp="1600353936422">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
-    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1600094299064" />
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1600353936422" />
     <state x="370" y="174" key="run.anything.popup" timestamp="1599917063322">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
