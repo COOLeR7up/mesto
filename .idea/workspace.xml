@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/FormValidator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,7 @@
       <workItem from="1599913960788" duration="5714000" />
       <workItem from="1600087876031" duration="6119000" />
       <workItem from="1600332003230" duration="7546000" />
-      <workItem from="1600516385267" duration="3773000" />
+      <workItem from="1600516385267" duration="4156000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -76,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600353933568</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="class validate finish">
+      <created>1600520488424</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600520488424</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,7 +91,8 @@
     <MESSAGE value="class first try" />
     <MESSAGE value="class second try" />
     <MESSAGE value="class validate" />
-    <option name="LAST_COMMIT_MESSAGE" value="class validate" />
+    <MESSAGE value="class validate finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="class validate finish" />
   </component>
   <component name="WindowStateProjectService">
     <state x="467" y="210" key="#Notifications" timestamp="1599917602010">
