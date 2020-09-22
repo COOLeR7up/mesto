@@ -5,6 +5,10 @@ class Card {
         this.title = title
         this.linkImg = linkImg
         this.template = template
+
+        this.card = document.querySelector(this.template).content.cloneNode(true);
+
+        this.photo = this.card.querySelector('.element__foto')
     }
 
     _deleteCardHandler(event) {
@@ -13,6 +17,7 @@ class Card {
     }
 
     _photoViewHandler(event) {
+        document.body.addEventListener('keydown', escHandlerclosepopup, {once: true});
         const popupFigure = document.querySelector('.popup-img');
         const popupImgText = popupFigure.querySelector('.popup-img__name');
         const popupImgFoto = popupFigure.querySelector('.popup-img__foto');
@@ -40,26 +45,23 @@ class Card {
             .addEventListener('click', this._likeHandler.bind(this))
 
         // Photo View
-        card.querySelector('.element__foto')
+        this.photo
             .addEventListener('click', this._photoViewHandler.bind(this))
 
         return card
     }
 
     generate() {
-        let card = document.querySelector(this.template)
-            .content.cloneNode(true);
 
-        card = this._handlerInit(card)
+        this.card = this._handlerInit(this.card)
 
-        card.querySelector('.element__text').textContent = this.title;
-        card.querySelector('.element__foto').alt = this.title;
-        card.querySelector('.element__foto').src = this.linkImg;
+        this.card.querySelector('.element__text').textContent = this.title;
+        this.photo.alt = this.title;
+        this.photo.src = this.linkImg;
 
-        return card
+        return this.card
     }
 }
 
 
-const card = new Card('testname', '', '.element-template');
 

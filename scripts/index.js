@@ -17,22 +17,55 @@ const cardInputElement = cardFormElement.querySelector('.popup-mesto__prof-name'
 const cardInputLinkEl = cardFormElement.querySelector('.popup-mesto__prof-text');
 
 
+function addPlaceValidator() {
+    const settingAddPlaceValidation = {
+        input: '.popup__input',
+        errorSelector: '.popup__error',
+        controlSelector: '.popup__control',
+        button: '.popup-mesto__button-save',
+    }
+
+    const addPlaceValidation = new FormValidator(settingAddPlaceValidation, '.popup-mesto__content')
+    addPlaceValidation.enableValidation()
+
+    return addPlaceValidation
+}
+
+
+function addCardValidator() {
+    const settingAddCardValidation = {
+        input: '.popup__input',
+        errorSelector: '.popup__error',
+        controlSelector: '.popup__control',
+        button: '.popup__button-save',
+    }
+
+    const addCardValidation = new FormValidator(settingAddCardValidation, '.popup__content')
+    addCardValidation.enableValidation()
+
+    return addCardValidation
+}
+
+const addPlaceValidatorObj = addPlaceValidator()
+const addCardValidatorObj = addCardValidator()
+
 
 //Открывает 1 попап
 const popupToggle = function (event) {
     if (!popup.classList.contains('popup__opened')) {
         nameInput.value = profName.textContent;
         jobInput.value = profText.textContent;
-        addCardValidator()
+        document.body.addEventListener('keydown', escHandlerclosepopup, {once: true});
+        FormValidator.clearErrors()
     }
-    popup.classList.toggle('popup__opened');
 
+    popup.classList.toggle('popup__opened');
 };
 // Закрытие попоп фото
 const popupFigureToggle = function () {
-   popupFigure.classList.toggle('popup__opened');
+    popupFigure.classList.toggle('popup__opened');
  }
-function closesPopup(){
+function closesPopup() {
     popup.classList.remove('popup__opened');
     editPlacePopup.classList.remove('popup-mesto__opened');
     popupFigure.classList.remove('popup__opened');
@@ -43,7 +76,12 @@ const placePopupToggle = function () {
     cardFormSubmitButton.setAttribute('disabled', true);
     cardFormSubmitButton.classList.add('popup__but-disabled');
     cardFormSubmitButton.classList.remove('popup__button-save');
-    addPlaceValidator()
+
+    if (editPlacePopup.classList.value != 'popup-mesto') {
+        document.body.addEventListener('keydown', escHandlerclosepopup, {once: true});
+    }
+
+    FormValidator.clearErrors()
 }
 
 //закрытие попапов на оверлей.
@@ -63,13 +101,13 @@ function formSubmitHandler (evt) {
 formElement.addEventListener('submit', formSubmitHandler);
 
 const escHandlerclosepopup = e => {
-        const escCode = 27;
-        if (e.keyCode === escCode) {
-            closesPopup()
-        };
+    const escCode = 27;
+
+    if (e.keyCode === escCode) {
+        closesPopup()
+    };
 }
 
-document.body.addEventListener('keydown', escHandlerclosepopup);
 
 function addCard(title, link) {
     const templateSelector = '.element-template'
@@ -106,29 +144,3 @@ initialCards.forEach(el => {
     addCard(el.title, el.link)
 })
 
-function addPlaceValidator() {
-    const settingAddPlaceValidation = {
-        form: '.popup-mesto__content',
-        input: '.popup__input',
-        errorSelector: '.popup__error',
-        controlSelector: '.popup__control',
-        button: '.popup-mesto__button-save',
-    }
-
-    const addPlaceValidation = new FormValidator(settingAddPlaceValidation)
-    addPlaceValidation.enableValidation()
-}
-
-
-function addCardValidator() {
-    const settingAddCardValidation = {
-        form: '.popup__content',
-        input: '.popup__input',
-        errorSelector: '.popup__error',
-        controlSelector: '.popup__control',
-        button: '.popup__button-save',
-    }
-
-    const addCardValidation = new FormValidator(settingAddCardValidation)
-    addCardValidation.enableValidation()
-}

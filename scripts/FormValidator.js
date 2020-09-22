@@ -1,23 +1,10 @@
 class FormValidator {
-    constructor(settings) {
-        this.form = document.querySelector(settings.form)
-        this.input = document.querySelectorAll(settings.form + " " + settings.input)
-        this.errorSelector = document.querySelectorAll(settings.form + " " + settings.errorSelector)
+    constructor(settings, form) {
+        this.form = document.querySelector(form)
+        this.input = document.querySelectorAll(form + " " + settings.input)
+        this.errorSelector = document.querySelectorAll(form + " " + settings.errorSelector)
         this.controlSelector = document.querySelectorAll(settings.controlSelector)
-        this.button = document.querySelector(settings.form + " " + settings.button)
-
-        // console.log(settings.form + " " + settings.button)
-
-        this.input.forEach((input, index) => {
-            this._checkInputValidity(input, index);
-            this._toggleButtonState();
-        })
-
-        this._clearErrorMessage()
-    }
-
-    _clearErrorMessage() {
-        this.errorSelector.forEach(el => el.textContent = '')
+        this.button = document.querySelector(form + " " + settings.button)
     }
 
     _setEventListener() {                                 //функция слушателя инпутов
@@ -40,14 +27,8 @@ class FormValidator {
     }
 
     _toggleButtonState() {
-
-
-
         if (!(this.button == null)) {
             if (this.form.checkValidity()) {
-
-
-
                 this.button.removeAttribute('disabled');
                 this.button.classList.remove('popup__but-disabled');
                 this.button.classList.add('popup__button-save');
@@ -78,6 +59,13 @@ class FormValidator {
         });
 
         this._setEventListener();
+    }
+
+    static clearErrors() {
+        const errors = document.querySelectorAll('.popup__error')
+        errors.forEach(el => {
+            el.textContent = ''
+        })
     }
 }
 //
