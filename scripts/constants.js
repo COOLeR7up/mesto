@@ -1,4 +1,8 @@
-const initialCards = [
+export const popupFigure = document.querySelector('.popup-img');
+export const popupImgText = popupFigure.querySelector('.popup-img__name');
+export const popupImgFoto = popupFigure.querySelector('.popup-img__foto');
+
+export const initialCards = [
     {
         title: 'Архыз',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'

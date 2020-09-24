@@ -1,14 +1,14 @@
+import escHandlerclosepopup from './index.js';
+import {popupFigure, popupImgFoto, popupImgText} from './constants.js'
 
+export default class Card {
+    constructor(title, imgLink, template) {
+        this._title = title
+        this._imgLink = imgLink
+        this._template = template
+        this._card = document.querySelector(this._template).content.cloneNode(true);
 
-class Card {
-    constructor(title, linkImg, template) {
-        this.title = title
-        this.linkImg = linkImg
-        this.template = template
-
-        this.card = document.querySelector(this.template).content.cloneNode(true);
-
-        this.photo = this.card.querySelector('.element__foto')
+        this._photo = this._card.querySelector('.element__foto')
     }
 
     _deleteCardHandler(event) {
@@ -16,17 +16,15 @@ class Card {
         card.remove();
     }
 
-    _photoViewHandler(event) {
-        document.body.addEventListener('keydown', escHandlerclosepopup, {once: true});
-        const popupFigure = document.querySelector('.popup-img');
-        const popupImgText = popupFigure.querySelector('.popup-img__name');
-        const popupImgFoto = popupFigure.querySelector('.popup-img__foto');
+    _photoViewHandler() {
+        document.body.addEventListener('keydown', escHandlerclosepopup);
+
 
         // Открытие popup
         popupFigure.classList.toggle('popup__opened');
 
-        popupImgFoto.src = this.linkImg;
-        popupImgText.textContent = this.title
+        popupImgFoto.src = this._imgLink;
+        popupImgText.textContent = this._title
 
     }
 
@@ -45,7 +43,7 @@ class Card {
             .addEventListener('click', this._likeHandler.bind(this))
 
         // Photo View
-        this.photo
+        this._photo
             .addEventListener('click', this._photoViewHandler.bind(this))
 
         return card
@@ -53,13 +51,13 @@ class Card {
 
     generate() {
 
-        this.card = this._handlerInit(this.card)
+        this._card = this._handlerInit(this._card)
 
-        this.card.querySelector('.element__text').textContent = this.title;
-        this.photo.alt = this.title;
-        this.photo.src = this.linkImg;
+        this._card.querySelector('.element__text').textContent = this._title;
+        this._photo.alt = this._title;
+        this._photo.src = this._imgLink;
 
-        return this.card
+        return this._card
     }
 }
 

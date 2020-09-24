@@ -1,3 +1,7 @@
+import FormValidator from './FormValidator.js'
+import Card from './Card.js'
+import {initialCards} from './constants.js'
+
 const popup = document.querySelector('.popup');
 const popupOpenButton = document.querySelector('.profile__edit')
 const popupCloseButton = popup.querySelector('.popup__close')
@@ -46,12 +50,12 @@ function addCardValidator() {
     return addCardValidation
 }
 
-const addPlaceValidatorObj = addPlaceValidator()
-const addCardValidatorObj = addCardValidator()
+addPlaceValidator()
+addCardValidator()
 
 
 //Открывает 1 попап
-const popupToggle = function (event) {
+const popupToggle = function () {
     if (!popup.classList.contains('popup__opened')) {
         nameInput.value = profName.textContent;
         jobInput.value = profText.textContent;
@@ -65,10 +69,14 @@ const popupToggle = function (event) {
 const popupFigureToggle = function () {
     popupFigure.classList.toggle('popup__opened');
  }
+ // Закрытие попап 1
 function closesPopup() {
     popup.classList.remove('popup__opened');
+}
+
+// Закрытие попап 2
+function closeEditPlacePopup() {
     editPlacePopup.classList.remove('popup-mesto__opened');
-    popupFigure.classList.remove('popup__opened');
 }
 
 const placePopupToggle = function () {
@@ -84,12 +92,27 @@ const placePopupToggle = function () {
     FormValidator.clearErrors()
 }
 
-//закрытие попапов на оверлей.
-const closePopupOverlay = function (event) {
+// Close popups overlay all
+const closePopupOverlay = (event, closePopupCallback) => {
     if (event.target !== event.currentTarget) {return}
-    closesPopup();
+    closePopupCallback()
+    document.body.removeEventListener('keydown', escHandlerclosepopup);
 }
 
+// Close Edit place
+const closePopupEditPlaceOverlay = (event) => {
+    closePopupOverlay(event, closesPopup)
+}
+
+// Close card
+const closePopupCardOverlay = (event) => {
+    closePopupOverlay(event, closeEditPlacePopup)
+}
+
+// Close figure
+const closePopupFigureOverlay = (event) => {
+    closePopupOverlay(event, popupFigureToggle)
+}
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -100,13 +123,16 @@ function formSubmitHandler (evt) {
 
 formElement.addEventListener('submit', formSubmitHandler);
 
-const escHandlerclosepopup = e => {
+const escHandlerclosepopup = event => {
     const escCode = 27;
 
-    if (e.keyCode === escCode) {
-        closesPopup()
+    if (event.keyCode === escCode) {
+        closePopupEditPlaceOverlay(event)
+        closePopupCardOverlay(event)
+        closePopupFigureOverlay(event)
     };
 }
+export default escHandlerclosepopup;
 
 
 function addCard(title, link) {
@@ -131,9 +157,11 @@ const formElementHandler = e => {
 cardFormElement.addEventListener('submit', formElementHandler)
 popupOpenButton.addEventListener('click', popupToggle)
 popupCloseButton.addEventListener('click', popupToggle)
-popup.addEventListener('click', closePopupOverlay);
-editPlacePopup.addEventListener('click', closePopupOverlay);
-popupFigure.addEventListener('click', closePopupOverlay);
+
+popup.addEventListener('click', closePopupCardOverlay);
+editPlacePopup.addEventListener('click', closePopupEditPlaceOverlay);
+popupFigure.addEventListener('click', closePopupFigureOverlay);
+
 openPlacePopupButton.addEventListener('click', placePopupToggle);
 closePlacePopupButton.addEventListener('click', placePopupToggle);
 popupImgCloseButton.addEventListener('click', popupFigureToggle);
