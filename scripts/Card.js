@@ -1,5 +1,6 @@
 import escHandlerclosepopup from './index.js';
-import {popupFigure, popupImgFoto, popupImgText} from './constants.js'
+import {popupFigure, popupImgCloseButton, popupImgFoto, popupImgText} from './constants.js'
+import {closePopupOverlay} from "./index.js";
 
 export default class Card {
     constructor(title, imgLink, template) {
@@ -16,16 +17,29 @@ export default class Card {
         card.remove();
     }
 
+    _photoViewCloseHandler() {
+        popupFigure.classList.remove('popup__opened');
+        console.log('esc')
+    }
+
     _photoViewHandler() {
-        document.body.addEventListener('keydown', escHandlerclosepopup);
+        // Обработчик закрытия на Esc
+        document.body.addEventListener('keydown', this._photoViewCloseHandler);
+
+        // Обработчик закрытия на Overlay
+        popupFigure.addEventListener('click', event => {
+            closePopupOverlay(event, this._photoViewCloseHandler)
+        })
+
+        // Обработчик закрытия на Крестик
+        popupImgCloseButton.addEventListener('click', this._photoViewCloseHandler)
 
 
         // Открытие popup
-        popupFigure.classList.toggle('popup__opened');
+        popupFigure.classList.add('popup__opened');
 
         popupImgFoto.src = this._imgLink;
         popupImgText.textContent = this._title
-
     }
 
     _likeHandler(event) {

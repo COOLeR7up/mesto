@@ -1,25 +1,37 @@
 import FormValidator from './FormValidator.js'
 import Card from './Card.js'
-import {initialCards} from './constants.js'
+import {initialCards, popupImgCloseButton} from './constants.js'
 
-const popup = document.querySelector('.popup');
-const popupOpenButton = document.querySelector('.profile__edit')
-const popupCloseButton = popup.querySelector('.popup__close')
-const formElement = popup.querySelector('.popup__content');
-const nameInput = popup.querySelector('.popup__prof-name');
-const jobInput = popup.querySelector('.popup__prof-text');
+
+
+const infoPopup = document.querySelector('.popup');
+// Открытие info popup
+const openButtonInfoPopup = document.querySelector('.profile__edit')
+// Закрытие info popup
+const closeButtonInfoPopup = infoPopup.querySelector('.popup__close')
+
+
+const formElement = infoPopup.querySelector('.popup__content');
+const nameInput = infoPopup.querySelector('.popup__prof-name');
+const jobInput = infoPopup.querySelector('.popup__prof-text');
 const profName = document.querySelector('.profile__name');
 const profText = document.querySelector('.profile__text');
-const editPlacePopup = document.querySelector('.popup-mesto');
-const openPlacePopupButton = document.querySelector('.profile__button-border');
-const closePlacePopupButton = editPlacePopup.querySelector('.popup-mesto__close');
-const cardFormElement = editPlacePopup.querySelector('.popup-mesto__content');
+
+
+const cardAddPopup = document.querySelector('.popup-mesto');
+// Открытие card popup
+const openButtonCardAddPopup = document.querySelector('.profile__button-border');
+// Закрытие card popup
+const closeButtonCardAddPopup = cardAddPopup.querySelector('.popup-mesto__close');
+
+const cardFormElement = cardAddPopup.querySelector('.popup-mesto__content');
+
+
 const cardFormSubmitButton = cardFormElement.querySelector('.popup-mesto__button-save');
 const popupFigure = document.querySelector('.popup-img');
-const popupImgCloseButton = popupFigure.querySelector('.popup-img__close');
 const cardInputElement = cardFormElement.querySelector('.popup-mesto__prof-name');
 const cardInputLinkEl = cardFormElement.querySelector('.popup-mesto__prof-text');
-
+const cardsList = document.querySelector('.element__list')
 
 function addPlaceValidator() {
     const settingAddPlaceValidation = {
@@ -54,65 +66,131 @@ addPlaceValidator()
 addCardValidator()
 
 
-//Открывает 1 попап
-const popupToggle = function () {
-    if (!popup.classList.contains('popup__opened')) {
-        nameInput.value = profName.textContent;
-        jobInput.value = profText.textContent;
-        document.body.addEventListener('keydown', escHandlerclosepopup, {once: true});
-        FormValidator.clearErrors()
-    }
+// ====- Popups -====
 
-    popup.classList.toggle('popup__opened');
-};
-// Закрытие попоп фото
-const popupFigureToggle = function () {
-    popupFigure.classList.toggle('popup__opened');
- }
+
+//      Открытие:
+
+
+function openInfoPopup() {
+    infoPopup.classList.add('popup__opened');
+
+    // TODO: получить данные для полей
+}
+
+function openCardAddPopup() {
+    cardAddPopup.classList.add('popup-mesto__opened');
+
+    // Button
+    cardFormSubmitButton.setAttribute('disabled', true);
+    cardFormSubmitButton.classList.add('popup__but-disabled');
+
+    cardFormSubmitButton.classList.remove('popup__button-save'); // TODO: узнать что делает
+}
+
+
+//      Закрытие:
+
+
+function closeInfoPopup() {
+    infoPopup.classList.remove('popup__opened');
+}
+
+function closeCardAddPopup() {
+    cardAddPopup.classList.remove('popup-mesto__opened');
+}
+
+
+
+
+
+
+
+
+// // Открывает 1 (PlaceEdit) попап
+// const popupToggle = function () {
+//     if (!popup.classList.contains('popup__opened')) {
+//         nameInput.value = profName.textContent;
+//         jobInput.value = profText.textContent;
+//         document.body.addEventListener('keydown', escHandlerclosepopup);
+//         FormValidator.clearErrors()
+//     }
+//
+//     popup.classList.toggle('popup__opened');
+// }
+//
+//
+//
+// // Toggle card
+// const placePopupToggle = function () {
+//     editPlacePopup.classList.toggle('popup-mesto__opened');
+//
+//     cardFormSubmitButton.setAttribute('disabled', true);
+//     cardFormSubmitButton.classList.add('popup__but-disabled');
+//     cardFormSubmitButton.classList.remove('popup__button-save');
+//
+//     // Открытие
+//     if (editPlacePopup.classList.value != 'popup-mesto') {
+//         document.body.addEventListener('keydown', escHandlerclosepopup);
+//     }
+//
+//     FormValidator.clearErrors() //TODO: Перенести в открытие
+// }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// // Закрытие попоп фото
+// const popupFigureToggle = function () {
+//     popupFigure.classList.toggle('popup__opened');
+// }
+
+
+// TODO: оверлей, не работает (Mesto)
  // Закрытие попап 1
 function closesPopup() {
     popup.classList.remove('popup__opened');
+
 }
 
+// TODO: оверлей, не работает (Card)
 // Закрытие попап 2
 function closeEditPlacePopup() {
     editPlacePopup.classList.remove('popup-mesto__opened');
+    console.log('test close')
 }
 
-const placePopupToggle = function () {
-    editPlacePopup.classList.toggle('popup-mesto__opened');
-    cardFormSubmitButton.setAttribute('disabled', true);
-    cardFormSubmitButton.classList.add('popup__but-disabled');
-    cardFormSubmitButton.classList.remove('popup__button-save');
 
-    if (editPlacePopup.classList.value != 'popup-mesto') {
-        document.body.addEventListener('keydown', escHandlerclosepopup, {once: true});
-    }
-
-    FormValidator.clearErrors()
-}
 
 // Close popups overlay all
-const closePopupOverlay = (event, closePopupCallback) => {
+export const closePopupOverlay = (event, closePopupCallback) => {
     if (event.target !== event.currentTarget) {return}
+
     closePopupCallback()
     document.body.removeEventListener('keydown', escHandlerclosepopup);
 }
 
 // Close Edit place
 const closePopupEditPlaceOverlay = (event) => {
-    closePopupOverlay(event, closesPopup)
+    closePopupOverlay(event, closeEditPlacePopup)
 }
 
 // Close card
 const closePopupCardOverlay = (event) => {
-    closePopupOverlay(event, closeEditPlacePopup)
+    closePopupOverlay(event, closesPopup)
 }
 
-// Close figure
-const closePopupFigureOverlay = (event) => {
-    closePopupOverlay(event, popupFigureToggle)
-}
+// // Close figure
+// const closePopupFigureOverlay = (event) => {
+//     closePopupOverlay(event, popupFigureToggle)
+//
+//     console.log('test')
+// }
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -138,9 +216,6 @@ export default escHandlerclosepopup;
 function addCard(title, link) {
     const templateSelector = '.element-template'
     const card = new Card(title, link, templateSelector)
-
-    const cardsList = document.querySelector('.element__list')
-
     cardsList.prepend(card.generate())
 }
 
@@ -154,17 +229,25 @@ const formElementHandler = e => {
     placePopupToggle();
 }
 
-cardFormElement.addEventListener('submit', formElementHandler)
-popupOpenButton.addEventListener('click', popupToggle)
-popupCloseButton.addEventListener('click', popupToggle)
+// cardFormElement.addEventListener('submit', formElementHandler)
+// popupOpenButton.addEventListener('click', popupToggle)
+// popupCloseButton.addEventListener('click', popupToggle)
+//
+// popup.addEventListener('click', closePopupCardOverlay);
+// editPlacePopup.addEventListener('click', closePopupEditPlaceOverlay);
+// popupFigure.addEventListener('click', closePopupFigureOverlay);
+//
+// openPlacePopupButton.addEventListener('click', placePopupToggle);
+// closePlacePopupButton.addEventListener('click', placePopupToggle);
+// popupImgCloseButton.addEventListener('click', popupFigureToggle);
 
-popup.addEventListener('click', closePopupCardOverlay);
-editPlacePopup.addEventListener('click', closePopupEditPlaceOverlay);
-popupFigure.addEventListener('click', closePopupFigureOverlay);
 
-openPlacePopupButton.addEventListener('click', placePopupToggle);
-closePlacePopupButton.addEventListener('click', placePopupToggle);
-popupImgCloseButton.addEventListener('click', popupFigureToggle);
+//      Popups handlers
+/*
+* 1. openButtonInfoPopup, closeButtonInfoPopup
+* 2. openPlacePopupButton (открытие), closePlacePopupButton (закрытие) | openButtonCardPopup closeButtonCardPopup
+* 3. popupFigure (открытие), popupImgCloseButton (закрытие) | openButtonPhotoPopup, closeButtonPhotoPopup
+* */
 
 
 // init card by default
