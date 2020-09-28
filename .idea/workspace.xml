@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/FormValidator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,9 @@
       <workItem from="1600805066303" duration="1400000" />
       <workItem from="1600952559627" duration="8232000" />
       <workItem from="1601066736317" duration="1407000" />
-      <workItem from="1601121113198" duration="6356000" />
+      <workItem from="1601121113198" duration="6664000" />
+      <workItem from="1601194907972" duration="5659000" />
+      <workItem from="1601320403701" duration="663000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -121,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600960861825</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ALL ne svse">
+      <created>1601127583339</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601127583339</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,25 +154,26 @@
     <MESSAGE value="class validate finish" />
     <MESSAGE value="second try" />
     <MESSAGE value="ALL ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="ALL ok" />
+    <MESSAGE value="ALL ne svse" />
+    <option name="LAST_COMMIT_MESSAGE" value="ALL ne svse" />
   </component>
   <component name="WindowStateProjectService">
     <state x="467" y="210" key="#Notifications" timestamp="1599917602010">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="467" y="210" key="#Notifications/0.0.1422.770@0.0.1422.770" timestamp="1599917602010" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1600960860442">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1601127581656">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1600960860442" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1601127581656" />
     <state x="493" y="141" key="FileChooserDialogImpl" timestamp="1600785629054">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="493" y="141" key="FileChooserDialogImpl/0.0.1422.770@0.0.1422.770" timestamp="1600785629054" />
-    <state x="305" y="119" key="Vcs.Push.Dialog.v2" timestamp="1600960864182">
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2" timestamp="1601127585102">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
-    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1600960864182" />
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1601127585102" />
     <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1600805281641" />
     <state x="370" y="174" key="run.anything.popup" timestamp="1599917063322">
       <screen x="0" y="0" width="1422" height="770" />

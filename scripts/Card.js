@@ -1,4 +1,3 @@
-import escHandlerclosepopup from './index.js';
 import {popupFigure, popupImgCloseButton, popupImgFoto, popupImgText} from './constants.js'
 import {closePopupOverlay} from "./index.js";
 
@@ -19,14 +18,12 @@ export default class Card {
 
     _photoViewCloseHandler() {
         popupFigure.classList.remove('popup__opened');
-        console.log('esc')
     }
 
     _photoViewHandler() {
         // Обработчик закрытия на Esc
         document.body.addEventListener('keydown', this._photoViewCloseHandler);
-
-        // Обработчик закрытия на Overlay
+                // Обработчик закрытия на Overlay
         popupFigure.addEventListener('click', event => {
             closePopupOverlay(event, this._photoViewCloseHandler)
         })

@@ -2,8 +2,7 @@ import FormValidator from './FormValidator.js'
 import Card from './Card.js'
 import {initialCards, popupImgCloseButton} from './constants.js'
 
-
-
+// Const popup Info
 const infoPopup = document.querySelector('.popup');
 // Открытие info popup
 const openButtonInfoPopup = document.querySelector('.profile__edit')
@@ -17,7 +16,7 @@ const jobInput = infoPopup.querySelector('.popup__prof-text');
 const profName = document.querySelector('.profile__name');
 const profText = document.querySelector('.profile__text');
 
-
+// const popup Card
 const cardAddPopup = document.querySelector('.popup-mesto');
 // Открытие card popup
 const openButtonCardAddPopup = document.querySelector('.profile__button-border');
@@ -26,9 +25,6 @@ const closeButtonCardAddPopup = cardAddPopup.querySelector('.popup-mesto__close'
 
 const cardFormElement = cardAddPopup.querySelector('.popup-mesto__content');
 
-
-const cardFormSubmitButton = cardFormElement.querySelector('.popup-mesto__button-save');
-const popupFigure = document.querySelector('.popup-img');
 const cardInputElement = cardFormElement.querySelector('.popup-mesto__prof-name');
 const cardInputLinkEl = cardFormElement.querySelector('.popup-mesto__prof-text');
 const cardsList = document.querySelector('.element__list')
@@ -70,155 +66,47 @@ addCardValidator()
 
 
 //      Открытие:
-
-
+// info
 function openInfoPopup() {
+         if (!infoPopup.classList.contains('popup__opened')) {
+             nameInput.value = profName.textContent;
+             jobInput.value = profText.textContent;
+             document.body.addEventListener('keydown', escHandlerclosepopup);
+
+         }
+    FormValidator.clearErrors()
     infoPopup.classList.add('popup__opened');
-
-    // TODO: получить данные для полей
 }
-
+// Card
 function openCardAddPopup() {
+    document.body.addEventListener('keydown', escHandlerclosepopup);
     cardAddPopup.classList.add('popup-mesto__opened');
-
-    // Button
-    cardFormSubmitButton.setAttribute('disabled', true);
-    cardFormSubmitButton.classList.add('popup__but-disabled');
-
-    cardFormSubmitButton.classList.remove('popup__button-save'); // TODO: узнать что делает
+    FormValidator.clearErrors()
 }
 
 
 //      Закрытие:
 
-
+// Info
 function closeInfoPopup() {
     infoPopup.classList.remove('popup__opened');
 }
-
+// Card
 function closeCardAddPopup() {
     cardAddPopup.classList.remove('popup-mesto__opened');
 }
 
 
+//      SUBMIT
 
-
-
-
-
-
-// // Открывает 1 (PlaceEdit) попап
-// const popupToggle = function () {
-//     if (!popup.classList.contains('popup__opened')) {
-//         nameInput.value = profName.textContent;
-//         jobInput.value = profText.textContent;
-//         document.body.addEventListener('keydown', escHandlerclosepopup);
-//         FormValidator.clearErrors()
-//     }
-//
-//     popup.classList.toggle('popup__opened');
-// }
-//
-//
-//
-// // Toggle card
-// const placePopupToggle = function () {
-//     editPlacePopup.classList.toggle('popup-mesto__opened');
-//
-//     cardFormSubmitButton.setAttribute('disabled', true);
-//     cardFormSubmitButton.classList.add('popup__but-disabled');
-//     cardFormSubmitButton.classList.remove('popup__button-save');
-//
-//     // Открытие
-//     if (editPlacePopup.classList.value != 'popup-mesto') {
-//         document.body.addEventListener('keydown', escHandlerclosepopup);
-//     }
-//
-//     FormValidator.clearErrors() //TODO: Перенести в открытие
-// }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// // Закрытие попоп фото
-// const popupFigureToggle = function () {
-//     popupFigure.classList.toggle('popup__opened');
-// }
-
-
-// TODO: оверлей, не работает (Mesto)
- // Закрытие попап 1
-function closesPopup() {
-    popup.classList.remove('popup__opened');
-
-}
-
-// TODO: оверлей, не работает (Card)
-// Закрытие попап 2
-function closeEditPlacePopup() {
-    editPlacePopup.classList.remove('popup-mesto__opened');
-    console.log('test close')
-}
-
-
-
-// Close popups overlay all
-export const closePopupOverlay = (event, closePopupCallback) => {
-    if (event.target !== event.currentTarget) {return}
-
-    closePopupCallback()
-    document.body.removeEventListener('keydown', escHandlerclosepopup);
-}
-
-// Close Edit place
-const closePopupEditPlaceOverlay = (event) => {
-    closePopupOverlay(event, closeEditPlacePopup)
-}
-
-// Close card
-const closePopupCardOverlay = (event) => {
-    closePopupOverlay(event, closesPopup)
-}
-
-// // Close figure
-// const closePopupFigureOverlay = (event) => {
-//     closePopupOverlay(event, popupFigureToggle)
-//
-//     console.log('test')
-// }
-
+// функция sibmit popup info
 function formSubmitHandler (evt) {
     evt.preventDefault();
     profName.textContent = nameInput.value;
     profText.textContent = jobInput.value;
-    popupToggle();
+    closeInfoPopup()
 }
-
-formElement.addEventListener('submit', formSubmitHandler);
-
-const escHandlerclosepopup = event => {
-    const escCode = 27;
-
-    if (event.keyCode === escCode) {
-        closePopupEditPlaceOverlay(event)
-        closePopupCardOverlay(event)
-        closePopupFigureOverlay(event)
-    };
-}
-export default escHandlerclosepopup;
-
-
-function addCard(title, link) {
-    const templateSelector = '.element-template'
-    const card = new Card(title, link, templateSelector)
-    cardsList.prepend(card.generate())
-}
-
+// sibmit popup Card
 const formElementHandler = e => {
     e.preventDefault();
     const title = cardInputElement.value;
@@ -226,27 +114,76 @@ const formElementHandler = e => {
     cardFormElement.reset();
     addCard(title, link)
 
-    placePopupToggle();
+    closeCardAddPopup()
 }
 
-// cardFormElement.addEventListener('submit', formElementHandler)
-// popupOpenButton.addEventListener('click', popupToggle)
-// popupCloseButton.addEventListener('click', popupToggle)
-//
-// popup.addEventListener('click', closePopupCardOverlay);
-// editPlacePopup.addEventListener('click', closePopupEditPlaceOverlay);
-// popupFigure.addEventListener('click', closePopupFigureOverlay);
-//
-// openPlacePopupButton.addEventListener('click', placePopupToggle);
-// closePlacePopupButton.addEventListener('click', placePopupToggle);
-// popupImgCloseButton.addEventListener('click', popupFigureToggle);
+// Закрытие overlay popup info
+const closeInfoPopupOverlay = function (event) {
+    if (event.target !== event.currentTarget) {return}
+    closeInfoPopup();
+}
+// Закрытие overlay popup Card
+const closeAddCardPopupOverlay = function (event) {
+    if (event.target !== event.currentTarget) {return}
+    closeCardAddPopup();
+}
+// Закрытие overlay popup Photo
+export const closePopupOverlay = (event, closePopupCallback) => {
+    if (event.target !== event.currentTarget) {return}
 
+    closePopupCallback()
+    document.body.removeEventListener('keydown', escHandlerclosepopup);
+}
+
+// Закрытие на Esc
+const escHandlerclosepopup = event => {
+    const escCode = 27;
+
+    if (event.keyCode === escCode) {
+
+        closeCardAddPopup(event)
+        closeInfoPopup(event)
+
+    };
+}
+
+// Добавление Card из массива
+function addCard(title, link) {
+    const templateSelector = '.element-template'
+    const card = new Card(title, link, templateSelector)
+    cardsList.prepend(card.generate())
+}
+
+
+
+// Открытие
+// попапа Info
+openButtonInfoPopup.addEventListener('click', openInfoPopup)
+// попап Card
+openButtonCardAddPopup.addEventListener('click', openCardAddPopup)
+
+// Закрытие
+// Попап info
+closeButtonInfoPopup.addEventListener('click', closeInfoPopup)
+// Попап Info Overlay
+infoPopup.addEventListener('click', closeInfoPopupOverlay)
+// Попап Card
+closeButtonCardAddPopup.addEventListener('click', closeCardAddPopup)
+// Попап Card Overlay
+cardAddPopup.addEventListener('click', closeAddCardPopupOverlay)
+
+
+// SUBMIT
+// submit popup info
+formElement.addEventListener('submit', formSubmitHandler);
+// submit popup Card
+cardFormElement.addEventListener('submit', formElementHandler);
 
 //      Popups handlers
 /*
 * 1. openButtonInfoPopup, closeButtonInfoPopup
-* 2. openPlacePopupButton (открытие), closePlacePopupButton (закрытие) | openButtonCardPopup closeButtonCardPopup
-* 3. popupFigure (открытие), popupImgCloseButton (закрытие) | openButtonPhotoPopup, closeButtonPhotoPopup
+* 2. openButtonCardAddPopup closeButtonCardAddPopup
+* 3. openButtonPhotoPopup, closeButtonPhotoPopup
 * */
 
 
