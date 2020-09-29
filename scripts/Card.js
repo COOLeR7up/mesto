@@ -16,13 +16,24 @@ export default class Card {
         card.remove();
     }
 
-    _photoViewCloseHandler() {
+    _photoViewCloseHandler = () => {
         popupFigure.classList.remove('popup__opened');
+        document.body.removeEventListener('keydown', this.wrapper)
     }
+
+
+    wrapper = (event) => {
+        const escCode = 27;
+
+        if (event.keyCode === escCode) {
+            this._photoViewCloseHandler()
+        }
+    }
+
 
     _photoViewHandler() {
         // Обработчик закрытия на Esc
-        document.body.addEventListener('keydown', this._photoViewCloseHandler);
+        document.body.addEventListener('keydown', this.wrapper);
                 // Обработчик закрытия на Overlay
         popupFigure.addEventListener('click', event => {
             closePopupOverlay(event, this._photoViewCloseHandler)

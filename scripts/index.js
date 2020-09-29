@@ -1,6 +1,6 @@
 import FormValidator from './FormValidator.js'
 import Card from './Card.js'
-import {initialCards, popupImgCloseButton} from './constants.js'
+import {initialCards} from './constants.js'
 
 // Const popup Info
 const infoPopup = document.querySelector('.popup');
@@ -84,18 +84,18 @@ function openCardAddPopup() {
     FormValidator.clearErrors()
 }
 
-
 //      Закрытие:
 
 // Info
 function closeInfoPopup() {
     infoPopup.classList.remove('popup__opened');
+    document.body.removeEventListener('keydown', escHandlerclosepopup);
 }
 // Card
 function closeCardAddPopup() {
     cardAddPopup.classList.remove('popup-mesto__opened');
+    document.body.removeEventListener('keydown', escHandlerclosepopup);
 }
-
 
 //      SUBMIT
 
@@ -171,7 +171,6 @@ infoPopup.addEventListener('click', closeInfoPopupOverlay)
 closeButtonCardAddPopup.addEventListener('click', closeCardAddPopup)
 // Попап Card Overlay
 cardAddPopup.addEventListener('click', closeAddCardPopupOverlay)
-
 
 // SUBMIT
 // submit popup info
