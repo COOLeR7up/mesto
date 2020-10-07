@@ -19,9 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="ALL">
+    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/Popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/PopupWithForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/PopupWithImage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/Section.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/UserInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -71,7 +79,17 @@
       <workItem from="1601121113198" duration="6664000" />
       <workItem from="1601194907972" duration="5659000" />
       <workItem from="1601320403701" duration="1130000" />
-      <workItem from="1601384535224" duration="2615000" />
+      <workItem from="1601384535224" duration="3094000" />
+      <workItem from="1601490694629" duration="23000" />
+      <workItem from="1601490770751" duration="4217000" />
+      <workItem from="1601533585034" duration="890000" />
+      <workItem from="1601543692612" duration="599000" />
+      <workItem from="1601666052618" duration="3453000" />
+      <workItem from="1601702725770" duration="6497000" />
+      <workItem from="1601748556569" duration="240000" />
+      <workItem from="1601800615533" duration="4556000" />
+      <workItem from="1601990283995" duration="4286000" />
+      <workItem from="1602052798421" duration="6176000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -136,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601321136894</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ALL OK">
+      <created>1601387316039</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601387316039</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,30 +188,36 @@
     <MESSAGE value="ALL ok" />
     <MESSAGE value="ALL ne svse" />
     <MESSAGE value="ALL" />
-    <option name="LAST_COMMIT_MESSAGE" value="ALL" />
+    <MESSAGE value="ALL OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="ALL OK" />
   </component>
   <component name="WindowStateProjectService">
     <state x="467" y="210" key="#Notifications" timestamp="1599917602010">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="467" y="210" key="#Notifications/0.0.1422.770@0.0.1422.770" timestamp="1599917602010" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1601127581656">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1601387314123">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1601127581656" />
-    <state x="493" y="141" key="FileChooserDialogImpl" timestamp="1600785629054">
-      <screen x="0" y="0" width="1422" height="770" />
-    </state>
-    <state x="493" y="141" key="FileChooserDialogImpl/0.0.1422.770@0.0.1422.770" timestamp="1600785629054" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1601321138690">
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1601387314123" />
+    <state x="888" y="256" key="FileChooserDialogImpl" timestamp="1601800621751">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1601127585102" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1601321138690" />
-    <state x="370" y="174" key="run.anything.popup" timestamp="1599917063322">
+    <state x="493" y="141" key="FileChooserDialogImpl/0.0.1422.770@0.0.1422.770" timestamp="1600785629054" />
+    <state x="888" y="256" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1601800621751" />
+    <state x="140" y="7" key="SettingsEditor" timestamp="1602056097015">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
-    <state x="370" y="174" key="run.anything.popup/0.0.1422.770@0.0.1422.770" timestamp="1599917063322" />
+    <state x="140" y="7" key="SettingsEditor/0.0.1422.770@0.0.1422.770" timestamp="1602056097015" />
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2" timestamp="1601387320573">
+      <screen x="0" y="0" width="1422" height="770" />
+    </state>
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1601387320573" />
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1601321138690" />
+    <state x="370" y="174" key="run.anything.popup" timestamp="1602059354622">
+      <screen x="0" y="0" width="1422" height="770" />
+    </state>
+    <state x="370" y="174" key="run.anything.popup/0.0.1422.770@0.0.1422.770" timestamp="1602059354622" />
     <state x="374" y="91" width="672" height="678" key="search.everywhere.popup" timestamp="1601124180490">
       <screen x="0" y="0" width="1422" height="770" />
     </state>

@@ -2,12 +2,13 @@ import {popupFigure, popupImgCloseButton, popupImgFoto, popupImgText} from './co
 import {closePopupOverlay} from "./index.js";
 
 export default class Card {
-    constructor(title, imgLink, template) {
+    constructor(title, imgLink, template, handleCardClick) {
         this._title = title
         this._imgLink = imgLink
         this._template = template
         this._card = document.querySelector(this._template).content.cloneNode(true);
 
+        this.handleCardClick = handleCardClick
         this._photo = this._card.querySelector('.element__foto')
     }
 
@@ -31,29 +32,11 @@ export default class Card {
     }
 
 
-    _photoViewHandler() {
-        // Обработчик закрытия на Esc
-        document.body.addEventListener('keydown', this.wrapper);
-                // Обработчик закрытия на Overlay
-        popupFigure.addEventListener('click', event => {
-            closePopupOverlay(event, this._photoViewCloseHandler)
-        })
-
-        // Обработчик закрытия на Крестик
-        popupImgCloseButton.addEventListener('click', this._photoViewCloseHandler)
-
-
-        // Открытие popup
-        popupFigure.classList.add('popup__opened');
-
-        popupImgFoto.src = this._imgLink;
-        popupImgText.textContent = this._title
-    }
-
     _likeHandler(event) {
         const socialLikeTarget = event.target;
         socialLikeTarget.classList.toggle('element__social-likeactiv');
     }
+
 
     _handlerInit(card) {
         // Delete
@@ -65,11 +48,12 @@ export default class Card {
             .addEventListener('click', this._likeHandler.bind(this))
 
         // Photo View
-        this._photo
-            .addEventListener('click', this._photoViewHandler.bind(this))
+        // this._photo
+        //     .addEventListener('click', this.handleCardClick.bind(this))
 
         return card
     }
+
 
     generate() {
 

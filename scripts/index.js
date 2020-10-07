@@ -1,33 +1,37 @@
 import FormValidator from './FormValidator.js'
 import Card from './Card.js'
-import {initialCards} from './constants.js'
+import {initialCards, cardsList} from './constants.js'
+
+import PopupWithForm from "./PopupWithForm.js";
+import UserInfo from "./UserInfo.js";
 
 // Const popup Info
-const infoPopup = document.querySelector('.popup');
+export const infoPopupSelector = document.querySelector('.popup');
 // Открытие info popup
 const openButtonInfoPopup = document.querySelector('.profile__edit')
 // Закрытие info popup
-const closeButtonInfoPopup = infoPopup.querySelector('.popup__close')
+const closeButtonInfoPopup = infoPopupSelector.querySelector('.popup__close')
 
 
-const formElement = infoPopup.querySelector('.popup__content');
-const nameInput = infoPopup.querySelector('.popup__prof-name');
-const jobInput = infoPopup.querySelector('.popup__prof-text');
-const profName = document.querySelector('.profile__name');
-const profText = document.querySelector('.profile__text');
+const formElement = infoPopupSelector.querySelector('.popup__content');
+
+export const nameInput = infoPopupSelector.querySelector('.popup__prof-name');
+export const jobInput = infoPopupSelector.querySelector('.popup__prof-text');
+export const profName = document.querySelector('.profile__name');
+export const profText = document.querySelector('.profile__text');
 
 // const popup Card
 const cardAddPopup = document.querySelector('.popup-mesto');
 // Открытие card popup
 const openButtonCardAddPopup = document.querySelector('.profile__button-border');
 // Закрытие card popup
-const closeButtonCardAddPopup = cardAddPopup.querySelector('.popup-mesto__close');
+const closeButtonCardAddPopup = cardAddPopup.querySelector('.popup__close');
 
 const cardFormElement = cardAddPopup.querySelector('.popup-mesto__content');
 
 const cardInputElement = cardFormElement.querySelector('.popup-mesto__prof-name');
 const cardInputLinkEl = cardFormElement.querySelector('.popup-mesto__prof-text');
-const cardsList = document.querySelector('.element__list')
+
 
 function addPlaceValidator() {
     const settingAddPlaceValidation = {
@@ -67,20 +71,20 @@ addCardValidator()
 
 //      Открытие:
 // info
-function openInfoPopup() {
-         if (!infoPopup.classList.contains('popup__opened')) {
-             nameInput.value = profName.textContent;
-             jobInput.value = profText.textContent;
-             document.body.addEventListener('keydown', escHandlerclosepopup);
-
-         }
-    FormValidator.clearErrors()
-    infoPopup.classList.add('popup__opened');
-}
+// function openInfoPopup() {
+//          if (!infoPopup.classList.contains('popup__opened')) {
+//              nameInput.value = profName.textContent;
+//              jobInput.value = profText.textContent;
+//              document.body.addEventListener('keydown', escHandlerclosepopup);
+//          }
+//
+//     FormValidator.clearErrors()
+//     infoPopup.classList.add('popup__opened');
+// }
 // Card
 function openCardAddPopup() {
     document.body.addEventListener('keydown', escHandlerclosepopup);
-    cardAddPopup.classList.add('popup-mesto__opened');
+    cardAddPopup.classList.add('popup__opened');
     FormValidator.clearErrors()
 }
 
@@ -93,7 +97,7 @@ function closeInfoPopup() {
 }
 // Card
 function closeCardAddPopup() {
-    cardAddPopup.classList.remove('popup-mesto__opened');
+    cardAddPopup.classList.remove('popup__opened');
     document.body.removeEventListener('keydown', escHandlerclosepopup);
 }
 
@@ -154,19 +158,34 @@ function addCard(title, link) {
     cardsList.prepend(card.generate())
 }
 
+const userInfo = new UserInfo().getInstance({nameSelector: '.profile__name', jobSelector: '.profile__text'})
+
+const infoPopup = new PopupWithForm('.popup', (selector) => {
+
+    //evt.preventDefault();
+    //profName.textContent = nameInput.value;
+    //profText.textContent = jobInput.value;
+    //closeInfoPopup()
+
+
+})
+infoPopup.setEventListeners()
 
 
 // Открытие
 // попапа Info
-openButtonInfoPopup.addEventListener('click', openInfoPopup)
+openButtonInfoPopup.addEventListener('click', () => {
+    console.log('test')
+    infoPopup.open()
+})
 // попап Card
 openButtonCardAddPopup.addEventListener('click', openCardAddPopup)
 
 // Закрытие
 // Попап info
-closeButtonInfoPopup.addEventListener('click', closeInfoPopup)
+//closeButtonInfoPopup.addEventListener('click', infoPopup.close)
 // Попап Info Overlay
-infoPopup.addEventListener('click', closeInfoPopupOverlay)
+//infoPopup.addEventListener('click', closeInfoPopupOverlay)
 // Попап Card
 closeButtonCardAddPopup.addEventListener('click', closeCardAddPopup)
 // Попап Card Overlay

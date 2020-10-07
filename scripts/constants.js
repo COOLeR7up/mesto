@@ -1,7 +1,8 @@
 export const popupFigure = document.querySelector('.popup-img');
 export const popupImgText = popupFigure.querySelector('.popup-img__name');
 export const popupImgFoto = popupFigure.querySelector('.popup-img__foto');
-export const popupImgCloseButton = popupFigure.querySelector('.popup-img__close');
+export const popupImgCloseButton = popupFigure.querySelector('.popup__close');
+export const cardsList = document.querySelector('.element__list')
 
 export const initialCards = [
     {
