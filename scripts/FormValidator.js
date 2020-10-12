@@ -32,7 +32,6 @@ export default class FormValidator {
             } else {
                 this._button.setAttribute('disabled', true);
                 this._button.classList.add('popup__but-disabled');
-                this._button.classList.remove('popup__button-save');
             }
         }
     }
@@ -59,6 +58,13 @@ export default class FormValidator {
     }
 
     static clearErrors() {
+        const button = document.querySelectorAll('.popup__button-save')
+
+        button.forEach(button => {
+            button.setAttribute('disabled', true);
+            button.classList.add('popup__but-disabled');
+        })
+
         const errors = document.querySelectorAll('.popup__error')
         errors.forEach(el => {
             el.textContent = ''

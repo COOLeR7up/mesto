@@ -1,11 +1,12 @@
-import {cardsList} from './constants.js'
 import Card from "./Card.js";
+
+import {cardsList} from './constants.js'
 
 
 export default class Section {
     constructor({items, renderer}, selector) {
         this.items = items
-        this.renderer = renderer
+        // this.renderer = renderer
 
         this.selector = document.querySelector(selector)
     }
@@ -18,11 +19,8 @@ export default class Section {
         return card
     }
 
-
-    addItem() {
-        this.items.forEach(i => {
-            const card = this.renderer(i.title, i.link)
-            cardsList.prepend(card.generate())
-        })
+    addItem(title, link) {
+        const card = this.renderer(title, link)
+        cardsList.prepend(card.generate())
     }
 }

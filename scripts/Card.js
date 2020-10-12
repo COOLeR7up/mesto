@@ -1,5 +1,7 @@
-import {popupFigure, popupImgCloseButton, popupImgFoto, popupImgText} from './constants.js'
-import {closePopupOverlay} from "./index.js";
+import PopupWithImage from "./PopupWithImage.js"
+
+import {popupFigure} from './constants.js'
+
 
 export default class Card {
     constructor(title, imgLink, template, handleCardClick) {
@@ -17,13 +19,13 @@ export default class Card {
         card.remove();
     }
 
-    _photoViewCloseHandler = () => {
+    _photoViewCloseHandler() {
         popupFigure.classList.remove('popup__opened');
-        document.body.removeEventListener('keydown', this.wrapper)
+        document.body.removeEventListener('keydown', this.wrapper) //TODO: Убрать wrapper
     }
 
 
-    wrapper = (event) => {
+    wrapper(event) {
         const escCode = 27;
 
         if (event.keyCode === escCode) {
@@ -48,15 +50,16 @@ export default class Card {
             .addEventListener('click', this._likeHandler.bind(this))
 
         // Photo View
-        // this._photo
-        //     .addEventListener('click', this.handleCardClick.bind(this))
+        const imageViewPopupSelector = '.popup-img'
+        const imageViewPopup = new PopupWithImage(imageViewPopupSelector)
+
+        this._photo.addEventListener('click', imageViewPopup.open.bind(this, this._imgLink, this._title))
 
         return card
     }
 
 
     generate() {
-
         this._card = this._handlerInit(this._card)
 
         this._card.querySelector('.element__text').textContent = this._title;

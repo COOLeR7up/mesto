@@ -1,68 +1,90 @@
 import Popup from "./Popup.js";
-
-import {profName, profText} from "./index.js";
-import FormValidator from "./FormValidator.js";
-import UserInfo from "./UserInfo.js";
-
+import FormValidator from './FormValidator.js'
 
 
 export default class PopupWithForm extends Popup {
-    constructor(selector, submitCallback) {
+    constructor(selector, initCallback, submitCallback) {
         super(selector)
-
         this.selector = document.querySelector(selector)
-        submitCallback(this.selector)
 
+        this.submitCallback = data => {
+
+            submitCallback(data)
+        }
+        this.initCallback = initCallback
+    }
+
+
+    _getInputValues() {
+        return [
+            this.selector.querySelectorAll('input')[0].value,
+            this.selector.querySelectorAll('input')[1].value
+        ]
+    }
+
+
+    setEventListeners() {
+        // overlay
+        this.selector.addEventListener('click', this._overlayClose)
+
+        // esc
+        document.addEventListener('keydown', this._handleEscClose)
+
+        // крестик
+        this.selector.querySelector('.popup__close').addEventListener('click', this._figureClose)
+
+        // submit
+        this.selector.querySelector('.popup__button-save').addEventListener('click', this._submitClose)
+    }
+
+
+    removeEventListeners() {
+        this.selector.removeEventListener('click', this._overlayClose)
+
+        document.removeEventListener('keydown', this._handleEscClose)
+
+        this.selector.querySelector('.popup__close').removeEventListener('click', this._figureClose)
+
+        this.selector.querySelector('.popup__button-save').removeEventListener('click', this._submitClose)
 
     }
 
 
-    _getInputValues = () => ({
-        name: this.selector.querySelector('.profile__name'),
-        job: this.selector.querySelector('.profile__text')
-    })
-
-
-    setEventListeners() {
-        super.setEventListeners()
-
-        this.selector.querySelector('.popup__button-save').addEventListener('click', () => {
+    _overlayClose(event) {
+        if (event.target == event.currentTarget) {
             this.close()
-        })
+        }
+    }
+
+
+    _figureClose() {
+        this.close()
+    }
+
+
+    _submitClose() {
+        this.submitCallback(this._getInputValues())
+        this.close()
     }
 
 
     open() {
-        //super.open()
         this.selector.classList.add('popup__opened');
 
         this.setEventListeners()
 
-        console.log('popup with form')
+        this.selector.querySelectorAll('input')[0].value = ''
+        this.selector.querySelectorAll('input')[1].value = ''
+
         FormValidator.clearErrors()
 
-
-        const {name, job} = new UserInfo().getInstance().getUserInfo()
-
-        console.log(name + ' ' + job)
-
-        this.selector.querySelector('.popup__prof-name').value = name
-        this.selector.querySelector('.popup__prof-text').value = job
-
-        // Validators
-        const settingAddCardValidation = {
-            input: '.popup__input',
-            errorSelector: '.popup__error',
-            controlSelector: '.popup__control',
-            button: '.popup__button-save',
-        }
-
-        const addCardValidation = new FormValidator(settingAddCardValidation, '.popup__content')
-        addCardValidation.enableValidation()
+        if (this.initCallback) this.initCallback()
     }
 
 
     close() {
+        super.close()
 
+        this.removeEventListeners()
     }
 }

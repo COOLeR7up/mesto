@@ -1,23 +1,22 @@
-import FormValidator from "./FormValidator.js";
-
-
 export default class Popup {
     constructor(selector) {
         this.selector = document.querySelector(selector)
     }
 
-    open = () => {
-        console.log('popup')
+
+    open() {
         this.selector.classList.add('popup__opened');
 
         this.setEventListeners()
     }
 
-    close = () => {
+
+    close() {
         this.selector.classList.remove('popup__opened');
     }
 
-    _handleEscClose = (event) => {
+
+    _handleEscClose(event) {
         const escCode = 27;
 
         if (event.keyCode === escCode) {
@@ -25,16 +24,17 @@ export default class Popup {
         }
     }
 
-    setEventListeners = () => {
+
+    setEventListeners() {
         // overlay
-        this.selector.addEventListener('click', event => {
+        this.selector.addEventListener('click', function (event)  {
             if (event.target == event.currentTarget) {
                 this.close()
             }
         })
 
         // esc
-        this.selector.addEventListener('keydown', this._handleEscClose)
+        document.querySelector('body').addEventListener('keydown', this._handleEscClose.bind(this))
 
         // крестик
         this.selector.querySelector('.popup__close').addEventListener('click', () => {
