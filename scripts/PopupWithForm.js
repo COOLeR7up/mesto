@@ -15,12 +15,10 @@ export default class PopupWithForm extends Popup {
     }
 
 
-    _getInputValues() {
-        return [
-            this.selector.querySelectorAll('input')[0].value,
-            this.selector.querySelectorAll('input')[1].value
-        ]
-    }
+    _getInputValues = () => ([
+        this.selector.querySelectorAll('input')[0].value,
+        this.selector.querySelectorAll('input')[1].value
+    ])
 
 
     setEventListeners() {
@@ -50,19 +48,19 @@ export default class PopupWithForm extends Popup {
     }
 
 
-    _overlayClose(event) {
+    _overlayClose = (event) => {
         if (event.target == event.currentTarget) {
             this.close()
         }
     }
 
 
-    _figureClose() {
+    _figureClose = () => {
         this.close()
     }
 
 
-    _submitClose() {
+    _submitClose = () => {
         this.submitCallback(this._getInputValues())
         this.close()
     }

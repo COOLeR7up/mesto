@@ -16,7 +16,7 @@ export default class Popup {
     }
 
 
-    _handleEscClose(event) {
+    _handleEscClose = (event) => {
         const escCode = 27;
 
         if (event.keyCode === escCode) {
@@ -27,8 +27,8 @@ export default class Popup {
 
     setEventListeners() {
         // overlay
-        this.selector.addEventListener('click', function (event)  {
-            if (event.target == event.currentTarget) {
+        this.selector.addEventListener('click',  (event) =>  {
+            if (event.target === event.currentTarget) {
                 this.close()
             }
         })

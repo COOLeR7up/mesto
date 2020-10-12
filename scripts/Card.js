@@ -19,13 +19,13 @@ export default class Card {
         card.remove();
     }
 
-    _photoViewCloseHandler() {
+    _photoViewCloseHandler = () => {
         popupFigure.classList.remove('popup__opened');
         document.body.removeEventListener('keydown', this.wrapper) //TODO: Убрать wrapper
     }
 
 
-    wrapper(event) {
+    wrapper = (event) => {
         const escCode = 27;
 
         if (event.keyCode === escCode) {

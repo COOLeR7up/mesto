@@ -19,22 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="webpack install">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/FormValidator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Popup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/PopupWithForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/PopupWithImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Section.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/UserInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +130,7 @@
       <workItem from="1602412249213" duration="309000" />
       <workItem from="1602420197375" duration="7467000" />
       <workItem from="1602441302951" duration="2606000" />
-      <workItem from="1602496449976" duration="3552000" />
+      <workItem from="1602496449976" duration="4617000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -212,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601387316039</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="webpack install">
+      <created>1602500190072</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602500190072</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +237,8 @@
     <MESSAGE value="ALL ne svse" />
     <MESSAGE value="ALL" />
     <MESSAGE value="ALL OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="ALL OK" />
+    <MESSAGE value="webpack install" />
+    <option name="LAST_COMMIT_MESSAGE" value="webpack install" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="207" key="#Inspections" timestamp="1602073530109">
@@ -278,32 +276,32 @@
     <state x="493" y="141" key="FileChooserDialogImpl/0.0.1422.770@0.0.1422.770" timestamp="1600785629054" />
     <state x="599" y="211" key="FileChooserDialogImpl/0.0.1728.1152@0.0.1728.1152" timestamp="1602065451029" />
     <state x="888" y="256" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1602420212866" />
-    <state width="2539" height="399" key="GridCell.Tab.0.bottom" timestamp="1602500020282">
+    <state width="2539" height="399" key="GridCell.Tab.0.bottom" timestamp="1602500408893">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1602500020282" />
-    <state width="2539" height="399" key="GridCell.Tab.0.center" timestamp="1602500020282">
+    <state width="2539" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1602500408893" />
+    <state width="2539" height="399" key="GridCell.Tab.0.center" timestamp="1602500408893">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="399" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1602500020282" />
-    <state width="2539" height="399" key="GridCell.Tab.0.left" timestamp="1602500020282">
+    <state width="2539" height="399" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1602500408893" />
+    <state width="2539" height="399" key="GridCell.Tab.0.left" timestamp="1602500408893">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="399" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1602500020282" />
-    <state width="2539" height="399" key="GridCell.Tab.0.right" timestamp="1602500020282">
+    <state width="2539" height="399" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1602500408893" />
+    <state width="2539" height="399" key="GridCell.Tab.0.right" timestamp="1602500408893">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="399" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1602500020282" />
+    <state width="2539" height="399" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1602500408893" />
     <state x="140" y="7" key="SettingsEditor" timestamp="1602162745364">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="140" y="7" key="SettingsEditor/0.0.1422.770@0.0.1422.770" timestamp="1602162745364" />
     <state x="389" y="220" key="SettingsEditor/0.0.1728.1152@0.0.1728.1152" timestamp="1602104498483" />
-    <state x="305" y="119" key="Vcs.Push.Dialog.v2" timestamp="1601387320573">
-      <screen x="0" y="0" width="1422" height="770" />
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1602500206487">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1601387320573" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1601321138690" />
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1602500206487" />
     <state x="666" y="316" key="run.anything.popup" timestamp="1602498780654">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

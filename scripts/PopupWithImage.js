@@ -8,7 +8,7 @@ export default class PopupWithImage extends Popup {
         super(selector)
     }
 
-    open(imgLink, title) {
+    open = (imgLink, title) =>  {
        super.open()
 
         popupImgFoto.src = imgLink
