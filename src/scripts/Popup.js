@@ -16,7 +16,7 @@ export default class Popup {
     }
 
 
-    _handleEscClose = (event) => {
+    _handleEscClose(event) {// TODO: arrow
         const escCode = 27;
 
         if (event.keyCode === escCode) {

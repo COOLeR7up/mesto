@@ -1,7 +1,7 @@
-@import url(./__bloc/popup-img__bloc.css);
-@import url(./__close/popup-img__close.css);
-@import url(./__foto/popup-img__foto.css);
-@import url(./__name/popup-img__name.css);
+@import url(__bloc/popup-img__bloc.css);
+@import url(__close/popup-img__close.css);
+@import url(__foto/popup-img__foto.css);
+@import url(__name/popup-img__name.css);
 
 .popup-img {
     display: flex;

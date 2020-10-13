@@ -14,11 +14,13 @@ export default class PopupWithForm extends Popup {
         this.initCallback = initCallback
     }
 
-
-    _getInputValues = () => ([
-        this.selector.querySelectorAll('input')[0].value,
-        this.selector.querySelectorAll('input')[1].value
-    ])
+// TODO: arrow
+    _getInputValues() {
+        return ([
+            this.selector.querySelectorAll('input')[0].value,
+            this.selector.querySelectorAll('input')[1].value
+        ])
+    }
 
 
     setEventListeners() {
@@ -48,19 +50,19 @@ export default class PopupWithForm extends Popup {
     }
 
 
-    _overlayClose = (event) => {
+    _overlayClose(event) {// TODO: arrow
         if (event.target == event.currentTarget) {
             this.close()
         }
     }
 
 
-    _figureClose = () => {
+    _figureClose() { // TODO: arrow
         this.close()
     }
 
 
-    _submitClose = () => {
+    _submitClose()  { // TODO: arrow
         this.submitCallback(this._getInputValues())
         this.close()
     }

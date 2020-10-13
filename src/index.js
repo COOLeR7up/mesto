@@ -1,9 +1,13 @@
-import FormValidator from "../scripts/FormValidator.js";
-import Section from "../scripts/Section.js";
-import PopupWithForm from "../scripts/PopupWithForm.js";
-import UserInfo from "../scripts/UserInfo.js";
+import FormValidator from "./scripts/FormValidator.js";
+import Section from "./scripts/Section.js";
+import PopupWithForm from "./scripts/PopupWithForm.js";
+import UserInfo from "./scripts/UserInfo.js";
 
-import {initialCards} from "../scripts/constants.js";
+import {initialCards} from "./scripts/constants.js";
+
+import './pages/index.css'
+
+
 
 export const profName = document.querySelector('.profile__name');
 export const profText = document.querySelector('.profile__text');
