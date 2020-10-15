@@ -19,20 +19,6 @@ export default class Card {
         card.remove();
     }
 
-    _photoViewCloseHandler() { // TODO: arrow
-        popupFigure.classList.remove('popup__opened');
-        document.body.removeEventListener('keydown', this.wrapper) //TODO: Убрать wrapper
-    }
-
-
-    wrapper(event) { // TODO: arrow
-        const escCode = 27;
-
-        if (event.keyCode === escCode) {
-            this._photoViewCloseHandler()
-        }
-    }
-
 
     _likeHandler(event) {
         const socialLikeTarget = event.target;
@@ -53,7 +39,9 @@ export default class Card {
         const imageViewPopupSelector = '.popup-img'
         const imageViewPopup = new PopupWithImage(imageViewPopupSelector)
 
-        this._photo.addEventListener('click', imageViewPopup.open.bind(this, this._imgLink, this._title))
+        this._photo.addEventListener('click', () => {
+            imageViewPopup.open(this._imgLink, this._title)
+        })
 
         return card
     }

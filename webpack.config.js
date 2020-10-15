@@ -16,16 +16,20 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.html$/,
+                loader: ['html-loader']
+            },
+            {
                 test: /\.css$/,
                 loader:  ['style-loader', 'css-loader']
             },
             {
                 test: /\.(png|jpg|svg|gif)$/,
-                use: ['file-loader']
-            },
+                use: ['file-loader'],
+             },
             {
                 test: /\.(ttf|woff2|woff|eot)$/,
-                use: ['file-loader']
+                use: ['file-loader'],
             }
         ],
     },
@@ -34,13 +38,18 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
-        // new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin(),
         new CopyPlugin({
             patterns: [
                 {
                     from: './src/images',
                     to: 'images'
+                },
+                {
+                    from: './vendor/fonts',
+                    to: 'fonts'
                 }
+
             ]
         })
     ]
