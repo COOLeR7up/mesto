@@ -1,6 +1,6 @@
 import PopupWithImage from "./PopupWithImage.js"
 
-import {popupFigure} from './constants.js'
+import {popupFigure} from '../utils/constants.js'
 
 
 export default class Card {
@@ -26,7 +26,7 @@ export default class Card {
     }
 
 
-    _handlerInit(card) {
+    _handlerInit(card, imageViewPopup) {
         // Delete
         card.querySelector('.element__delete-but')
             .addEventListener('click', this._deleteCardHandler.bind(this));
@@ -34,10 +34,6 @@ export default class Card {
         // Like
         card.querySelector('.element__social-like')
             .addEventListener('click', this._likeHandler.bind(this))
-
-        // Photo View
-        const imageViewPopupSelector = '.popup-img'
-        const imageViewPopup = new PopupWithImage(imageViewPopupSelector)
 
         this._photo.addEventListener('click', () => {
             imageViewPopup.open(this._imgLink, this._title)
@@ -47,8 +43,8 @@ export default class Card {
     }
 
 
-    generate() {
-        this._card = this._handlerInit(this._card)
+    generate(imageViewPopup) {
+        this._card = this._handlerInit(this._card, imageViewPopup)
 
         this._card.querySelector('.element__text').textContent = this._title;
         this._photo.alt = this._title;

@@ -3,6 +3,7 @@ export const popupImgText = popupFigure.querySelector('.popup-img__name');
 export const popupImgFoto = popupFigure.querySelector('.popup-img__foto');
 export const popupImgCloseButton = popupFigure.querySelector('.popup__close');
 export const cardsList = document.querySelector('.element__list')
+export const ESC_CODE = 27;
 
 export const initialCards = [
     {
@@ -30,3 +31,25 @@ export const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+
+
+export const settingInfoValidation = {
+    input: '.popup__input',
+    errorSelector: '.popup__error',
+    controlSelector: '.popup__control',
+    button: '.popup__button-save',
+    disableBtnSelector: 'popup__but-disabled',
+    typeErrorSelector: 'form__input_type_error',
+    activeErrorSelector: 'form__input-error_active'
+}
+
+export const settingAddCardValidation = {
+    input: '.popup__input',
+    errorSelector: '.popup__error',
+    controlSelector: '.popup__control',
+    button: '.popup-mesto__button-save',
+    disableBtnSelector: 'popup__but-disabled',
+    typeErrorSelector: 'form__input_type_error',
+    activeErrorSelector: 'form__input-error_active',
+    clearBeforeClose: true
+}

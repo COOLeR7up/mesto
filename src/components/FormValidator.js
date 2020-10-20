@@ -4,6 +4,9 @@ export default class FormValidator {
         this._inputs = document.querySelectorAll(form + " " + settings.input)
         this._errorSelectors = document.querySelectorAll(form + " " + settings.errorSelector)
         this._button = document.querySelector(form + " " + settings.button)
+        this.disableBtnSelector = settings.disableBtnSelector
+        this.typeErrorSelector = settings.typeErrorSelector
+        this.activeErrorSelector = settings.activeErrorSelector
     }
 
     _setEventListener() {                                 //функция слушателя инпутов
@@ -27,24 +30,26 @@ export default class FormValidator {
         if (!(this._button == null)) {
             if (this._form.checkValidity()) {
                 this._button.removeAttribute('disabled');
-                this._button.classList.remove('popup__but-disabled');
-                this._button.classList.add('popup__button-save');
+                this._button.classList.remove(this.disableBtnSelector);
+
+                const popupButtonSave = 'popup__button-save'
+                this._button.classList.add(popupButtonSave);
             } else {
                 this._button.setAttribute('disabled', true);
-                this._button.classList.add('popup__but-disabled');
+                this._button.classList.add(this.disableBtnSelector);
             }
         }
     }
 
     _showInputError(input, index) {          //выводит ошибку валидации
-        input.classList.add('form__input_type_error');
+        input.classList.add(this.typeErrorSelector);
         this._errorSelectors[index].textContent = input.validationMessage;
-        this._errorSelectors[index].classList.add('form__input-error_active');
+        this._errorSelectors[index].classList.add(this.activeErrorSelector);
     }
 
     _hideInputError(input, index) {                     //убирает ошибку валиадации
-        input.classList.remove('form__input_type_error');
-        this._errorSelectors[index].classList.remove('form__input-error_active');
+        input.classList.remove(this.typeErrorSelector);
+        this._errorSelectors[index].classList.remove(this.activeErrorSelector);
         this._errorSelectors[index].textContent = '';
     }
 
@@ -55,19 +60,5 @@ export default class FormValidator {
         });
 
         this._setEventListener();
-    }
-
-    static clearErrors() {
-        const button = document.querySelectorAll('.popup__button-save')
-
-        button.forEach(button => {
-            button.setAttribute('disabled', true);
-            button.classList.add('popup__but-disabled');
-        })
-
-        const errors = document.querySelectorAll('.popup__error')
-        errors.forEach(el => {
-            el.textContent = ''
-        })
     }
 }

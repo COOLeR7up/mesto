@@ -19,13 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="webpack install2">
-      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="webpack install ALL3">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/Popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/PopupWithForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +60,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../New project/chat" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
@@ -61,6 +68,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\coolc\YandexDisk\Yandex-pr\mesto\src\pages" />
+      <recent name="C:\Users\coolc\YandexDisk\Yandex-pr\mesto\src\utils" />
       <recent name="C:\Users\coolc\YandexDisk\Yandex-pr\mesto\src" />
     </key>
   </component>
@@ -140,6 +149,12 @@
       <workItem from="1602668762690" duration="1584000" />
       <workItem from="1602711579367" duration="96000" />
       <workItem from="1602744009275" duration="7447000" />
+      <workItem from="1602835071259" duration="1073000" />
+      <workItem from="1602921489131" duration="11918000" />
+      <workItem from="1602966804014" duration="4536000" />
+      <workItem from="1603025983824" duration="538000" />
+      <workItem from="1603027904500" duration="1862000" />
+      <workItem from="1603198879594" duration="4972000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -232,7 +247,28 @@
       <option name="project" value="LOCAL" />
       <updated>1602599839388</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="webpack install ALL">
+      <created>1602835111374</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1602835111374</updated>
+    </task>
+    <task id="LOCAL-00015" summary="webpack install ALL2">
+      <created>1602835147715</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1602835147715</updated>
+    </task>
+    <task id="LOCAL-00016" summary="webpack install ALL3">
+      <created>1602835725674</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1602835725674</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +298,10 @@
     <MESSAGE value="ALL OK" />
     <MESSAGE value="webpack install" />
     <MESSAGE value="webpack install2" />
-    <option name="LAST_COMMIT_MESSAGE" value="webpack install2" />
+    <MESSAGE value="webpack install ALL" />
+    <MESSAGE value="webpack install ALL2" />
+    <MESSAGE value="webpack install ALL3" />
+    <option name="LAST_COMMIT_MESSAGE" value="webpack install ALL3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="207" key="#Inspections" timestamp="1602073530109">
@@ -294,43 +333,43 @@
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1601387314123" />
-    <state x="888" y="256" key="FileChooserDialogImpl" timestamp="1602579209281">
+    <state x="888" y="256" key="FileChooserDialogImpl" timestamp="1603203374956">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="493" y="141" key="FileChooserDialogImpl/0.0.1422.770@0.0.1422.770" timestamp="1600785629054" />
     <state x="599" y="211" key="FileChooserDialogImpl/0.0.1728.1152@0.0.1728.1152" timestamp="1602065451029" />
-    <state x="888" y="256" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1602579209281" />
-    <state width="2539" height="399" key="GridCell.Tab.0.bottom" timestamp="1602772487934">
+    <state x="888" y="256" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1603203374956" />
+    <state width="1567" height="401" key="GridCell.Tab.0.bottom" timestamp="1603199341581">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1602772487934" />
-    <state width="2539" height="399" key="GridCell.Tab.0.center" timestamp="1602772487934">
+    <state width="1567" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1603199341581" />
+    <state width="1567" height="401" key="GridCell.Tab.0.center" timestamp="1603199341581">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="399" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1602772487934" />
-    <state width="2539" height="399" key="GridCell.Tab.0.left" timestamp="1602772487933">
+    <state width="1567" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1603199341581" />
+    <state width="1567" height="401" key="GridCell.Tab.0.left" timestamp="1603199341580">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="399" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1602772487933" />
-    <state width="2539" height="399" key="GridCell.Tab.0.right" timestamp="1602772487934">
+    <state width="1567" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1603199341580" />
+    <state width="1567" height="401" key="GridCell.Tab.0.right" timestamp="1603199341581">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="399" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1602772487934" />
+    <state width="1567" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1603199341581" />
     <state x="140" y="7" key="SettingsEditor" timestamp="1602162745364">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="140" y="7" key="SettingsEditor/0.0.1422.770@0.0.1422.770" timestamp="1602162745364" />
     <state x="389" y="220" key="SettingsEditor/0.0.1728.1152@0.0.1728.1152" timestamp="1602104498483" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1602599841491">
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1602835727944">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1601387320573" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1602599841491" />
-    <state x="666" y="316" key="run.anything.popup" timestamp="1602498780654">
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1602835727944" />
+    <state x="666" y="316" key="run.anything.popup" timestamp="1603203111188">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="370" y="174" key="run.anything.popup/0.0.1422.770@0.0.1422.770" timestamp="1602165673785" />
-    <state x="666" y="316" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1602498780654" />
+    <state x="666" y="316" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1603203111188" />
     <state x="673" y="165" width="1210" height="1233" key="search.everywhere.popup" timestamp="1602769160375">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

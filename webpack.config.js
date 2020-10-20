@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: './src/pages/index.js',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
@@ -21,7 +21,16 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader:  ['style-loader', 'css-loader']
+                loader: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1
+                        }
+                    },
+                    'postcss-loader'
+                ],
             },
             {
                 test: /\.(png|jpg|svg|gif)$/,
@@ -30,7 +39,12 @@ module.exports = {
             {
                 test: /\.(ttf|woff2|woff|eot)$/,
                 use: ['file-loader'],
-            }
+            },
+            {
+                test: /.js$/,
+                loader: 'babel-loader',
+                exclude: '/node_modules/'
+            },
         ],
     },
 
