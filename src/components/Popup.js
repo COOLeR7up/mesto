@@ -5,46 +5,40 @@ import {ESC_CODE} from "../utils/constants";
 export default class Popup {
     constructor(selector) {
         this.popupElement = document.querySelector(selector)
+
+        console.log(this.popupElement)
+
+        this._handleEscClose = this._handleEscClose.bind(this)
     }
 
 
     open() {
         this.popupElement.classList.add('popup__opened');
 
-
         // esc
-        document.querySelector('body').addEventListener('keydown', this._handleEscClose.bind(this), {once: true})
+        document.querySelector('body').addEventListener('keydown', this._handleEscClose)
     }
 
 
     close() {
         this.popupElement.classList.remove('popup__opened');
 
-
-        document.querySelector('body').removeEventListener('keydown', this._handleEscClose.bind(this))
+        document.querySelector('body').removeEventListener('keydown', this._handleEscClose)
     }
 
     setEventListeners() {
-        console.log(this.popupElement);
 
         // overlay
         this.popupElement.addEventListener('click', this._overlayClose())
 
         // крестик
-        this.popupElement.querySelector('.popup__close').addEventListener('click', this._figureClose())
+        this.popupElement.querySelector('.popup__close').addEventListener('click', this.close.bind(this))
 
     }
 
-    _figureClose() {
-        return () => {
-            this.close()
-        }
-    }
 
     _handleEscClose(event) {
-
         if (event.keyCode === ESC_CODE) {
-
             this.close()
         }
     }

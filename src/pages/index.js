@@ -17,18 +17,6 @@ import {
 import Card from "../components/Card";
 
 
-
-export const profName = document.querySelector('.profile__name');
-export const profText = document.querySelector('.profile__text');
-
-
-export const closePopupOverlay = (event, closePopupCallback) => {
-    if (event.target !== event.currentTarget) {return}
-
-    closePopupCallback()
-    document.body.removeEventListener('keydown', escHandlerclosepopup);
-}
-
 // UserInfo
 const userInfoSelectors = {nameSelector: '.profile__name', jobSelector: '.profile__text'}
 const userInfo = new UserInfo(userInfoSelectors)
@@ -40,15 +28,19 @@ const userInfo = new UserInfo(userInfoSelectors)
 const imageViewPopupSelector = '.popup-img'
 const imageViewPopup = new PopupWithImage(imageViewPopupSelector, popupImgFoto, popupImgText)
 
+function handlerCardClick() {
+    imageViewPopup.open(this._imgLink, this._title)
+}
+
 const section = new Section({
     items: initialCards,
     renderer: (title, link) => {
         const templateSelector = '.element-template'
-        const card = new Card(title, link, templateSelector)
+        const card = new Card(title, link, templateSelector, handlerCardClick)
 
         return card
     }
-}, cardsList, imageViewPopup)
+}, cardsList)
 section.items.forEach(item => {
     section.addItem(item.title, item.link)
 })
@@ -79,7 +71,7 @@ export function clearErrors() {
 // Info
 const infoPopupSelector = '.popup'
 
-const infoInit = () => {
+const initInfo = () => {
     const {name, job} = userInfo.getUserInfo()
 
     const nameInputSelector = '.popup__prof-name'
@@ -99,7 +91,14 @@ const infoSubmitHandler = (data) => {
 }
 const inputsPopupInfo = ['.popup__prof-name', '.popup__prof-text']
 
-const infoPopup = new PopupWithForm(infoPopupSelector, inputsPopupInfo, infoInit.bind(this), null, infoSubmitHandler)
+const infoPopup = new PopupWithForm(
+    infoPopupSelector,
+    inputsPopupInfo,
+    initInfo.bind(this),
+    null,
+    infoSubmitHandler,
+    clearErrors
+)
 const infoPopupButton = document.querySelector('.profile__edit')
 
 infoPopupButton.addEventListener('click', infoPopup.open.bind(infoPopup))
@@ -126,7 +125,15 @@ const addCardBeforeCloseCallback = (selector) => {
 }
 
 const inputsPopupAddCard = ['.popup-mesto__prof-name', '.popup-mesto__prof-text']
-const addCardPopup = new PopupWithForm(addCardPopupSelector, inputsPopupAddCard, addCardInitPopup.bind(this), addCardBeforeCloseCallback.bind(this), addCardSubmitHandler)
+const addCardPopup = new PopupWithForm(
+    addCardPopupSelector,
+    inputsPopupAddCard,
+    addCardInitPopup.bind(this),
+    addCardBeforeCloseCallback.bind(this),
+    addCardSubmitHandler,
+    clearErrors
+)
+
 const addCardButton = document.querySelector('.profile__button-border')
 
 addCardButton.addEventListener('click', addCardPopup.open.bind(addCardPopup))

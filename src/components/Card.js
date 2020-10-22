@@ -1,17 +1,13 @@
-import PopupWithImage from "./PopupWithImage.js"
-
-import {popupFigure} from '../utils/constants.js'
-
-
 export default class Card {
-    constructor(title, imgLink, template, handleCardClick) {
+    constructor(title, imgLink, template, handlerCardClick) {
         this._title = title
         this._imgLink = imgLink
         this._template = template
         this._card = document.querySelector(this._template).content.cloneNode(true);
 
-        this.handleCardClick = handleCardClick
         this._photo = this._card.querySelector('.element__foto')
+
+        this.handlerCardClick = handlerCardClick
     }
 
     _deleteCardHandler(event) {
@@ -26,7 +22,7 @@ export default class Card {
     }
 
 
-    _handlerInit(card, imageViewPopup) {
+    _handlerInit(card) {
         // Delete
         card.querySelector('.element__delete-but')
             .addEventListener('click', this._deleteCardHandler.bind(this));
@@ -36,7 +32,7 @@ export default class Card {
             .addEventListener('click', this._likeHandler.bind(this))
 
         this._photo.addEventListener('click', () => {
-            imageViewPopup.open(this._imgLink, this._title)
+            this.handlerCardClick(this._imgLink, this._title)
         })
 
         return card
