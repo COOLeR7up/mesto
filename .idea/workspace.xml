@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="ALl complite">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="ALl complite5" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +142,7 @@
       <workItem from="1603198879594" duration="5653000" />
       <workItem from="1603355311292" duration="31000" />
       <workItem from="1603355437074" duration="959000" />
-      <workItem from="1603370983091" duration="5458000" />
+      <workItem from="1603370983091" duration="5608000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -270,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603206161791</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ALl complite5">
+      <created>1603376623291</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1603376623291</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +304,8 @@
     <MESSAGE value="webpack install ALL2" />
     <MESSAGE value="webpack install ALL3" />
     <MESSAGE value="ALl complite" />
-    <option name="LAST_COMMIT_MESSAGE" value="ALl complite" />
+    <MESSAGE value="ALl complite5" />
+    <option name="LAST_COMMIT_MESSAGE" value="ALl complite5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="207" key="#Inspections" timestamp="1602073530109">
@@ -342,32 +343,32 @@
     <state x="493" y="141" key="FileChooserDialogImpl/0.0.1422.770@0.0.1422.770" timestamp="1603355443196" />
     <state x="599" y="211" key="FileChooserDialogImpl/0.0.1728.1152@0.0.1728.1152" timestamp="1602065451029" />
     <state x="888" y="256" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1603203374956" />
-    <state width="1567" height="400" key="GridCell.Tab.0.bottom" timestamp="1603372884963">
+    <state width="1567" height="400" key="GridCell.Tab.0.bottom" timestamp="1603376636431">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1567" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1603372884963" />
-    <state width="1567" height="400" key="GridCell.Tab.0.center" timestamp="1603372884962">
+    <state width="1567" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1603376636431" />
+    <state width="1567" height="400" key="GridCell.Tab.0.center" timestamp="1603376636431">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1567" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1603372884962" />
-    <state width="1567" height="400" key="GridCell.Tab.0.left" timestamp="1603372884962">
+    <state width="1567" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1603376636431" />
+    <state width="1567" height="400" key="GridCell.Tab.0.left" timestamp="1603376636431">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1567" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1603372884962" />
-    <state width="1567" height="400" key="GridCell.Tab.0.right" timestamp="1603372884963">
+    <state width="1567" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1603376636431" />
+    <state width="1567" height="400" key="GridCell.Tab.0.right" timestamp="1603376636431">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1567" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1603372884963" />
+    <state width="1567" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1603376636431" />
     <state x="140" y="7" key="SettingsEditor" timestamp="1602162745364">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="140" y="7" key="SettingsEditor/0.0.1422.770@0.0.1422.770" timestamp="1602162745364" />
     <state x="389" y="220" key="SettingsEditor/0.0.1728.1152@0.0.1728.1152" timestamp="1602104498483" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1603206165420">
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1603376624652">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1601387320573" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1603206165420" />
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1603376624652" />
     <state x="666" y="316" key="run.anything.popup" timestamp="1603373047849">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
