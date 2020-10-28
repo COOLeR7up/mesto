@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="ALl complite5" />
+    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="ALl complite6">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,6 +145,7 @@
       <workItem from="1603355311292" duration="31000" />
       <workItem from="1603355437074" duration="959000" />
       <workItem from="1603370983091" duration="5608000" />
+      <workItem from="1603898674320" duration="43000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -270,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603376623291</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ALl complite6">
+      <created>1603898703520</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1603898703521</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +315,8 @@
     <MESSAGE value="webpack install ALL3" />
     <MESSAGE value="ALl complite" />
     <MESSAGE value="ALl complite5" />
-    <option name="LAST_COMMIT_MESSAGE" value="ALl complite5" />
+    <MESSAGE value="ALl complite6" />
+    <option name="LAST_COMMIT_MESSAGE" value="ALl complite6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="207" key="#Inspections" timestamp="1602073530109">
@@ -364,11 +375,11 @@
     </state>
     <state x="140" y="7" key="SettingsEditor/0.0.1422.770@0.0.1422.770" timestamp="1602162745364" />
     <state x="389" y="220" key="SettingsEditor/0.0.1728.1152@0.0.1728.1152" timestamp="1602104498483" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1603376624652">
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1603898706547">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1601387320573" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1603376624652" />
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1603898706547" />
     <state x="666" y="316" key="run.anything.popup" timestamp="1603373047849">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
