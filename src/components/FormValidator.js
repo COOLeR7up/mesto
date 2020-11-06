@@ -42,19 +42,18 @@ export default class FormValidator {
     }
 
     _showInputError(input, index) {          //выводит ошибку валидации
-        input.classList.add(this.typeErrorSelector);
+        // input.classList.add(this.typeErrorSelector);
         this._errorSelectors[index].textContent = input.validationMessage;
-        this._errorSelectors[index].classList.add(this.activeErrorSelector);
+        // this._errorSelectors[index].classList.add(this.activeErrorSelector);
     }
 
     _hideInputError(input, index) {                     //убирает ошибку валиадации
-        input.classList.remove(this.typeErrorSelector);
-        this._errorSelectors[index].classList.remove(this.activeErrorSelector);
+        // input.classList.remove(this.typeErrorSelector);
+        // this._errorSelectors[index].classList.remove(this.activeErrorSelector);
         this._errorSelectors[index].textContent = '';
     }
 
     enableValidation() {
-
         this._form.addEventListener('submit', (evt) => {
             evt.preventDefault();
         });

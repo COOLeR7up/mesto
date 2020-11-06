@@ -87,7 +87,7 @@ const initInfo = () => {
 
 
 const infoSubmitHandler = (data) => {
-    userInfo.setUserInfo({name: data[0], job: data[1]})
+    userInfo.setUserInfo({name: data.profName, job: data.profText})
 }
 const inputsPopupInfo = ['.popup__prof-name', '.popup__prof-text']
 
@@ -108,7 +108,7 @@ infoPopupButton.addEventListener('click', infoPopup.open.bind(infoPopup))
 const addCardPopupSelector = '.popup-mesto'
 
 const addCardSubmitHandler = (data) => {
-    section.addItem(data[0], data[1])
+    section.addItem(data.cardName, data.cardLink)
 }
 
 const addCardInitPopup = (selector) => {

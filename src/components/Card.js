@@ -39,8 +39,8 @@ export default class Card {
     }
 
 
-    generate(imageViewPopup) {
-        this._card = this._handlerInit(this._card, imageViewPopup)
+    generate() {
+        this._card = this._handlerInit(this._card)
 
         this._card.querySelector('.element__text').textContent = this._title;
         this._photo.alt = this._title;

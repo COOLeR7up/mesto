@@ -45,11 +45,11 @@
             <form class="popup__content form" action="#" method="POST" name="editProfile" novalidate>
                 <h2 class="popup__title" >Редактировать профиль</h2>
                 <div class="popup__control">
-                    <input type="text" class="popup__prof-name popup__input" required minlength="2" maxlength="40" name="namePrCards">
+                    <input type="text" class="popup__prof-name popup__input" required minlength="2" maxlength="40" name="profName">
                     <span class="popup__error"></span>
                 </div>
                 <div class="popup__control">
-                    <input type="text" class="popup__prof-text popup__input" required minlength="2" maxlength="200" name="linkPrCards">
+                    <input type="text" class="popup__prof-text popup__input" required minlength="2" maxlength="200" name="profText">
                     <span class="popup__error"></span>
                 </div>
                 <button class="popup__button-save popup__but-disabled" type="submit" disabled>Сохранить</button>
@@ -63,11 +63,11 @@
             <form class="popup-mesto__content form" name="addElCards" novalidate>
                 <h2 class="popup-mesto__title">Новое место</h2>
                 <div class="popup-mesto__control popup__control">
-                    <input type="text" class="popup-mesto__prof-name popup__input" placeholder="Название" name="nameElCards"  required minlength="1" maxlength="30">
+                    <input type="text" class="popup-mesto__prof-name popup__input" placeholder="Название" name="cardName"  required minlength="1" maxlength="30">
                     <span class="popup-mesto__error popup__error"></span>
                 </div>
                 <div class="popup-mesto__control popup__control">
-                    <input type="url" class="popup-mesto__prof-text popup__input" placeholder="Ссылка на карточку" name="linkElCards" required>
+                    <input type="url" class="popup-mesto__prof-text popup__input" placeholder="Ссылка на карточку" name="cardLink" required>
                     <span class="popup-mesto__error popup__error"></span>
                 </div>
                 <button class="popup-mesto__button-save popup-mesto__but-disabled  popup__but-disabled popup__button-save" type="submit" disabled>Создать</button>
