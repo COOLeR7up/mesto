@@ -1,0 +1,5 @@
+.element__social-li {
+    display: flex;
+    flex-direction: column;
+
+}

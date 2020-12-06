@@ -4,4 +4,6 @@
 @import url(__group/element__group.css);
 @import url(__social-like/element__social-like.css);
 @import url(__text/element__text.css);
+@import url(__social-li/element__social-li.css);
+@import url(__social-like-score/element__social-like-score.css);
 

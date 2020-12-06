@@ -1,0 +1,22 @@
+@import url(__btn/popup-edit-avatar__btn.css);
+@import url(__container/popup-edit-avatar__container.css);
+@import url(__text/popup-edit-avatar__text.css);
+@import url(__all/popup-edit-avatar__all.css);
+@import url(__control/popup-edit-avatar__control.css);
+@import url(__input/popup-edit-avatar__input.css);
+
+.popup-edit-avatar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.4s linear 0s, opacity .4s linear;
+}

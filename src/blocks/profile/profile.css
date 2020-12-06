@@ -5,6 +5,10 @@
 @import url(__name/profile__name.css);
 @import url(__text/profile__text.css);
 @import url(__block/profile__block.css);
+@import url(__avatar-all/profile__avatar-all.css);
+@import url(__avatar-edit/profile__avatar-edit.css);
+@import url(__avatar-cover/profile__avatar-cover.css);
+
 
 .profile {
     display: flex;

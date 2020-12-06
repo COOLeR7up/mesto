@@ -17,7 +17,14 @@
     <main class="content">
         <section class="profile">
             <div class="profile__block">
-                <img src="images/avatar.jpg" alt="Фото Кусто" class="profile__avatar">
+
+                <button class="profile__avatar-all">
+                    <img src="images/avatar.jpg" alt="Фото Кусто" class="profile__avatar">
+                    <div class="profile__avatar-cover">
+                        <div class="profile__avatar-edit"></div>
+                    </div>
+                </button>
+
                 <div class="profile__info">
                     <div class="profile__all">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -25,6 +32,7 @@
                     </div>
                     <p class="profile__text">Исследователь океана</p>
                 </div>
+
             </div>
             <button class="profile__button-border"></button>
         </section>
@@ -82,6 +90,32 @@
             <p class="popup-img__name"></p>
         </figure>
     </section>
+
+    <section class="popup-card-delite">
+        <div class="popup-card-delite__container">
+            <div class="popup__close"></div>
+            <div class="popup-card-delite__all">
+                <h2 class="popup-card-delite__text">Вы уверены?</h2>
+                <button class="popup-card-delite__btn">Да</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="popup-edit-avatar">
+        <div class="popup-edit-avatar__container">
+            <div class="popup__close"></div>
+            <form class="popup-edit-avatar__content form" name="addEdAvatar" novalidate>
+                <div class="popup-edit-avatar__all">
+                    <h2 class="popup-edit-avatar__text">Обновить аватар</h2>
+                    <div class="popup__control popup-edit-avatar__control">
+                        <input type="url" class="popup-edit-avatar__input popup__input" placeholder="Ссылка на аватар" name="avatarImg" required>
+                        <span class="popup-edit-avatar__error popup__error"></span>
+                    </div>
+                    <button class="popup__button-save popup-edit-avatar__btn" type="submit" disabled>Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </section>
 </div>
 
 <template class="element-template">
@@ -90,7 +124,11 @@
         <img src="#" alt="#" class="element__foto">
         <div class="element__all">
             <h2 class="element__text"></h2>
-            <button class="element__social-like"></button>
+            <div class="element__social-li">
+                <button class="element__social-like"></button>
+                <span class="element__social-like-score"></span>
+            </div>
+
         </div>
     </li>
 </template>

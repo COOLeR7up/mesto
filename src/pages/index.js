@@ -3,7 +3,7 @@ import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 
-import {initialCards} from "../utils/constants.js";
+import {initialCards, settingEditAvatarValidation} from "../utils/constants.js";
 
 import './index.css'
 import PopupWithImage from "../components/PopupWithImage";
@@ -15,11 +15,26 @@ import {
     settingInfoValidation
 } from "../utils/constants";
 import Card from "../components/Card";
+import PopupEditAvatar from "../components/PopupEditAvatar.js";
+import CardRepository from "../API/Repository/CardRepository.js";
+import UserRepository from "../API/Repository/UserRepository.js";
 
 
 // UserInfo
 const userInfoSelectors = {nameSelector: '.profile__name', jobSelector: '.profile__text'}
 const userInfo = new UserInfo(userInfoSelectors)
+
+UserRepository.get()
+    .then(res => res.json())
+    .then(result => {
+        const user = {
+            name: result.name,
+            job: result.about
+        }
+        userInfo.setUserInfo(user)
+        userInfo.setAvatar(result.url)
+    })
+
 
 
 // Initial default cards
@@ -33,17 +48,26 @@ function handlerCardClick() {
 }
 
 const section = new Section({
-    items: initialCards,
     renderer: (title, link) => {
         const templateSelector = '.element-template'
-        const card = new Card(title, link, templateSelector, handlerCardClick)
+        const card = new Card(title, link, templateSelector, handlerCardClick, clearErrors)
 
         return card
     }
 }, cardsList)
-section.items.forEach(item => {
-    section.addItem(item.title, item.link)
-})
+
+// fetch card
+CardRepository.getAll()
+    .then(res => res.json())
+    .then((result) => {
+        console.log(result)
+        result.forEach(item => {
+            section.addItem(item.name, item.link)
+        })
+    })
+
+
+
 
 
 // Validators
@@ -68,6 +92,8 @@ export function clearErrors() {
 
 
 //  ==- Popups -==
+
+
 // Info
 const infoPopupSelector = '.popup'
 
@@ -137,6 +163,41 @@ const addCardPopup = new PopupWithForm(
 const addCardButton = document.querySelector('.profile__button-border')
 
 addCardButton.addEventListener('click', addCardPopup.open.bind(addCardPopup))
+
+//PopupEditAvatar
+
+const editAvatarInitPopup = (selector) => {
+
+    const content = '.popup-edit-avatar__content'
+
+    validation(settingEditAvatarValidation, content)
+}
+
+
+const editAvatarBeforeCloseCallback = (selector) => {
+    selector.querySelectorAll('input')[0].value = ''
+}
+
+const editAvatarSubmitHandler = (data) => {
+    //TODO или класс добавление или в классе PopupEditAvatar сделать добавление ссылки
+
+}
+
+const editAvatarSelector = '.popup-edit-avatar'
+
+const popupEditAvatar = new PopupEditAvatar(
+    editAvatarSelector,
+    editAvatarInitPopup.bind(this),
+    editAvatarBeforeCloseCallback.bind(this),
+    editAvatarSubmitHandler,
+    clearErrors
+)
+
+const editAvatarButton = document.querySelector('.profile__avatar-all')
+
+editAvatarButton.addEventListener('click', popupEditAvatar.open.bind(popupEditAvatar))
+
+
 
 
 

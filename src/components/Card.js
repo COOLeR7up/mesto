@@ -1,3 +1,8 @@
+import PopupCardDelite from "./PopupCardDelete.js";
+import PopupCardDelete from "./PopupCardDelete.js";
+import {clearErrors} from "../pages";
+import CardRepository from "../API/Repository/CardRepository.js";
+
 export default class Card {
     constructor(title, imgLink, template, handlerCardClick) {
         this._title = title
@@ -11,8 +16,17 @@ export default class Card {
     }
 
     _deleteCardHandler(event) {
+        // DeleteCard удаляет карту
+        const deleteCardSelector = '.popup-card-delite'
         const card = event.target.closest('.element__group');
-        card.remove();
+
+        const deleteCard = () => {
+            card.remove();
+        }
+
+        const popupCardDelete = new PopupCardDelete(deleteCardSelector, deleteCard)
+        card.addEventListener('click', popupCardDelete.open());
+        clearErrors()
     }
 
 
@@ -37,7 +51,6 @@ export default class Card {
 
         return card
     }
-
 
     generate() {
         this._card = this._handlerInit(this._card)

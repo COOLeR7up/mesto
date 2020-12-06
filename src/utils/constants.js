@@ -53,3 +53,14 @@ export const settingAddCardValidation = {
     activeErrorSelector: 'form__input-error_active',
     clearBeforeClose: true
 }
+
+export const settingEditAvatarValidation = {
+    input: '.popup__input',
+    errorSelector: '.popup__error',
+    controlSelector: '.popup__control',
+    button: '.popup-edit-avatar__btn',
+    disableBtnSelector: 'popup__but-disabled',
+    typeErrorSelector: 'form__input_type_error',
+    activeErrorSelector: 'form__input-error_active',
+    clearBeforeClose: true
+}
