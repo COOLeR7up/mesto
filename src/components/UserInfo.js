@@ -6,8 +6,8 @@ export default class UserInfo {
         this.nameSelector = document.querySelector(nameSelector)
         this.jobSelector = document.querySelector(jobSelector)
         this.photoSelector = document.querySelector(photoSelector)
+        this.id = null
     }
-
 
     getUserInfo() {
         return {
@@ -16,17 +16,16 @@ export default class UserInfo {
         }
     }
 
+    setId(value) {
+        this.id = value
+    }
 
     setUserInfo({name, job}) {
         this.nameSelector.textContent = name
         this.jobSelector.textContent = job
-
-        const user = new UserModel(name, job)
-        UserRepository.update(user)
     }
 
     setAvatar(url) {
-        const photo = document.querySelector(this.photoSelector)
-        photo.src = url
+        this.photoSelector.src = url
     }
 }

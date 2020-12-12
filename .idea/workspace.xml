@@ -19,46 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="ALl complite8">
-      <change afterPath="$PROJECT_DIR$/src/API/Model/CardModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Model/UserModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Repository/CardRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Repository/UserRepository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/apiConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/element-template/__social-li/element__social-li.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/element-template/__social-like-score/element__social-like-score.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-card-delite/__all/popup-card-delite__all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-card-delite/__btn/popup-card-delite__btn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-card-delite/__container/popup-card-delite__container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-card-delite/__text/popup-card-delite__text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-card-delite/popup-card-delite.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-edit-avatar/__all/popup-edit-avatar__all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-edit-avatar/__btn/popup-edit-avatar__btn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-edit-avatar/__container/popup-edit-avatar__container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-edit-avatar/__control/popup-edit-avatar__control.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-edit-avatar/__input/popup-edit-avatar__input.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-edit-avatar/__text/popup-edit-avatar__text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup-edit-avatar/popup-edit-avatar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar-all/profile__avatar-all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar-cover/profile__avatar-cover.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar-edit/profile__avatar-edit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GetServer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PopupCardDelete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PopupEditAvatar.js" afterDir="false" />
+    <list default="true" id="7a685a96-6356-478d-9a50-eac037deca1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/pure.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/element-template/element-template.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/element-template/element-template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup-mesto/__prof-text/popup-mesto__prof-text.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup-mesto/__prof-text/popup-mesto__prof-text.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/Repository/CardRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Repository/CardRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/Repository/UserRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Repository/UserRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupEditAvatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupEditAvatar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../russian-travel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
@@ -95,10 +67,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\coolc\YandexDisk\Yandex-pr\mesto\src\utils" />
       <recent name="C:\Users\пк\YandexDisk\Yandex-pr\mesto\src\API" />
       <recent name="C:\Users\coolc\YandexDisk\Yandex-pr\mesto\src\blocks\popup-edit-avatar\__all" />
       <recent name="C:\Users\coolc\YandexDisk\Yandex-pr\mesto\src\pages" />
-      <recent name="C:\Users\coolc\YandexDisk\Yandex-pr\mesto\src\utils" />
       <recent name="C:\Users\coolc\YandexDisk\Yandex-pr\mesto\src" />
     </key>
   </component>
@@ -209,7 +181,14 @@
       <workItem from="1606799030260" duration="6191000" />
       <workItem from="1606917432571" duration="1686000" />
       <workItem from="1606919515271" duration="3860000" />
-      <workItem from="1607147564773" duration="16941000" />
+      <workItem from="1607147564773" duration="17207000" />
+      <workItem from="1607619525523" duration="8115000" />
+      <workItem from="1607629724019" duration="658000" />
+      <workItem from="1607668665712" duration="1694000" />
+      <workItem from="1607703133130" duration="8905000" />
+      <workItem from="1607770892966" duration="1488000" />
+      <workItem from="1607799535460" duration="48000" />
+      <workItem from="1607799717096" duration="3379000" />
     </task>
     <task id="LOCAL-00001" summary="class first try">
       <created>1599917557907</created>
@@ -358,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604664334160</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="ALl complite9">
+      <created>1607282056792</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1607282056792</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,7 +381,9 @@
     <MESSAGE value="ALl complite5" />
     <MESSAGE value="ALl complite6" />
     <MESSAGE value="ALl complite7" />
-    <option name="LAST_COMMIT_MESSAGE" value="ALl complite7" />
+    <MESSAGE value="ALl complite8" />
+    <MESSAGE value="ALl complite9" />
+    <option name="LAST_COMMIT_MESSAGE" value="ALl complite9" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="207" key="#Inspections" timestamp="1602073530109">
@@ -424,55 +412,55 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605513645108" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1601387314123">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1607282053776">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1601387314123" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1422.770@0.0.1422.770" timestamp="1607282053776" />
     <state x="493" y="141" key="FileChooserDialogImpl" timestamp="1607275843953">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="493" y="141" key="FileChooserDialogImpl/0.0.1422.770@0.0.1422.770" timestamp="1607275843953" />
     <state x="599" y="211" key="FileChooserDialogImpl/0.0.1728.1152@0.0.1728.1152" timestamp="1602065451029" />
     <state x="888" y="256" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1605705465011" />
-    <state width="1402" height="78" key="GridCell.Tab.0.bottom" timestamp="1607148821111">
-      <screen x="0" y="0" width="1422" height="770" />
+    <state width="2539" height="402" key="GridCell.Tab.0.bottom" timestamp="1607800535249">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1402" height="78" key="GridCell.Tab.0.bottom/0.0.1422.770@0.0.1422.770" timestamp="1607148821111" />
-    <state width="2539" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1605708673743" />
-    <state width="1402" height="78" key="GridCell.Tab.0.center" timestamp="1607148821111">
-      <screen x="0" y="0" width="1422" height="770" />
+    <state width="1402" height="78" key="GridCell.Tab.0.bottom/0.0.1422.770@0.0.1422.770" timestamp="1607282216498" />
+    <state width="2539" height="402" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1607800535249" />
+    <state width="2539" height="402" key="GridCell.Tab.0.center" timestamp="1607800535249">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1402" height="78" key="GridCell.Tab.0.center/0.0.1422.770@0.0.1422.770" timestamp="1607148821111" />
-    <state width="2539" height="402" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1605708673743" />
-    <state width="1402" height="78" key="GridCell.Tab.0.left" timestamp="1607148821111">
-      <screen x="0" y="0" width="1422" height="770" />
+    <state width="1402" height="78" key="GridCell.Tab.0.center/0.0.1422.770@0.0.1422.770" timestamp="1607282216497" />
+    <state width="2539" height="402" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1607800535249" />
+    <state width="2539" height="402" key="GridCell.Tab.0.left" timestamp="1607800535249">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1402" height="78" key="GridCell.Tab.0.left/0.0.1422.770@0.0.1422.770" timestamp="1607148821111" />
-    <state width="2539" height="402" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1605708673743" />
-    <state width="1402" height="78" key="GridCell.Tab.0.right" timestamp="1607148821111">
-      <screen x="0" y="0" width="1422" height="770" />
+    <state width="1402" height="78" key="GridCell.Tab.0.left/0.0.1422.770@0.0.1422.770" timestamp="1607282216497" />
+    <state width="2539" height="402" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1607800535249" />
+    <state width="2539" height="402" key="GridCell.Tab.0.right" timestamp="1607800535249">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1402" height="78" key="GridCell.Tab.0.right/0.0.1422.770@0.0.1422.770" timestamp="1607148821111" />
-    <state width="2539" height="402" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1605708673743" />
+    <state width="1402" height="78" key="GridCell.Tab.0.right/0.0.1422.770@0.0.1422.770" timestamp="1607282216497" />
+    <state width="2539" height="402" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1607800535249" />
     <state x="140" y="7" key="SettingsEditor" timestamp="1602162745364">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
     <state x="140" y="7" key="SettingsEditor/0.0.1422.770@0.0.1422.770" timestamp="1602162745364" />
     <state x="389" y="220" key="SettingsEditor/0.0.1728.1152@0.0.1728.1152" timestamp="1602104498483" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2" timestamp="1604664335560">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1601387320573" />
-    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604664335560" />
-    <state x="370" y="174" key="run.anything.popup" timestamp="1607278837980">
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2" timestamp="1607282060367">
       <screen x="0" y="0" width="1422" height="770" />
     </state>
+    <state x="305" y="119" key="Vcs.Push.Dialog.v2/0.0.1422.770@0.0.1422.770" timestamp="1607282060367" />
+    <state x="549" y="216" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604664335560" />
+    <state x="666" y="316" key="run.anything.popup" timestamp="1607717088002">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
     <state x="370" y="174" key="run.anything.popup/0.0.1422.770@0.0.1422.770" timestamp="1607278837980" />
-    <state x="666" y="316" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1603373047849" />
-    <state x="673" y="165" width="1210" height="1233" key="search.everywhere.popup" timestamp="1602769160375">
+    <state x="666" y="316" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1607717088002" />
+    <state x="673" y="165" width="1210" height="1233" key="search.everywhere.popup" timestamp="1607620857641">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="374" y="91" width="672" height="678" key="search.everywhere.popup/0.0.1422.770@0.0.1422.770" timestamp="1601124180490" />
-    <state x="673" y="165" width="1210" height="1233" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1602769160375" />
+    <state x="673" y="165" width="1210" height="1233" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1607620857641" />
   </component>
 </project>

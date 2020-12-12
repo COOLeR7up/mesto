@@ -25,6 +25,30 @@ export default class UserRepository {
         })
             .then(res => {
                 if (res.ok) {
+
+                    return res.json();
+                }
+
+                return Promise.reject(`Ошибка: ${res.status}`);
+            })
+            .catch(err => console.log(err))
+    }
+
+
+    static updateAvatar(avatar) {
+        fetch(baseUrl + '/users/me/avatar', {
+            method: 'PATCH',
+            headers: {
+                authorization: token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                avatar
+            })
+        })
+            .then(res => {
+                if (res.ok) {
+
                     return res.json();
                 }
 

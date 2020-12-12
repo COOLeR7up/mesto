@@ -29,29 +29,55 @@ export default class CardRepository {
                     return res;
                 }
 
-                // return Promise.reject(`Ошибка: ${res.status}`);
+                return Promise.reject(`Ошибка: ${res.status}`);
             })
-            // .catch(err => console.log(err))
+            .catch(err => console.log(err))
     }
 
 
-    update(id) {
+    static addLike(id) {
+        fetch(baseUrl + '/cards/likes/' + id, {
+            method: 'PUT',
+            headers: {
+                authorization: token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                _id: id
+            })
+        })
+            .then(res => {
+                console.log(res.json());
+                if (res.ok) {
+                    return res;
+                }
 
+                return Promise.reject(`Ошибка: ${res.status}`);
+            })
+            .catch(err => console.log(err))
     }
 
 
-    delete(id) {
+    static deleteLike(id) {
+        fetch(baseUrl + '/cards/likes/' + id, {
+            method: 'DELETE',
+            headers: {
+                authorization: token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                _id: id
+            })
+        })
+            .then(res => {
+                console.log(res.json());
+                if (res.ok) {
+                    return res;
+                }
 
-    }
-
-
-    addLike(id) {
-
-    }
-
-
-    deleteLike(id) {
-
+                return Promise.reject(`Ошибка: ${res.status}`);
+            })
+            .catch(err => console.log(err))
     }
 }
 

@@ -19,9 +19,11 @@ import PopupEditAvatar from "../components/PopupEditAvatar.js";
 import CardRepository from "../API/Repository/CardRepository.js";
 import UserRepository from "../API/Repository/UserRepository.js";
 
+import { generateId } from "../utils/pure";
+import UserModel from "../API/Model/UserModel";
 
 // UserInfo
-const userInfoSelectors = {nameSelector: '.profile__name', jobSelector: '.profile__text'}
+const userInfoSelectors = {nameSelector: '.profile__name', jobSelector: '.profile__text', photoSelector: '.profile__avatar'}
 const userInfo = new UserInfo(userInfoSelectors)
 
 UserRepository.get()
@@ -29,10 +31,12 @@ UserRepository.get()
     .then(result => {
         const user = {
             name: result.name,
-            job: result.about
+            job: result.about,
+            id: result._id
         }
         userInfo.setUserInfo(user)
-        userInfo.setAvatar(result.url)
+        userInfo.setAvatar(result.avatar)
+        userInfo.setId(result._id)
     })
 
 
@@ -46,11 +50,10 @@ const imageViewPopup = new PopupWithImage(imageViewPopupSelector, popupImgFoto, 
 function handlerCardClick() {
     imageViewPopup.open(this._imgLink, this._title)
 }
-
 const section = new Section({
-    renderer: (title, link) => {
+    renderer: (title, link, likes, id) => {
         const templateSelector = '.element-template'
-        const card = new Card(title, link, templateSelector, handlerCardClick, clearErrors)
+        const card = new Card(title, link, likes, id, userInfo.id, templateSelector, handlerCardClick, clearErrors)
 
         return card
     }
@@ -60,9 +63,9 @@ const section = new Section({
 CardRepository.getAll()
     .then(res => res.json())
     .then((result) => {
-        console.log(result)
         result.forEach(item => {
-            section.addItem(item.name, item.link)
+            section.addItem(item.name, item.link, item.likes, item._id)
+
         })
     })
 
@@ -114,6 +117,11 @@ const initInfo = () => {
 
 const infoSubmitHandler = (data) => {
     userInfo.setUserInfo({name: data.profName, job: data.profText})
+
+    const user = new UserModel(data.profName, data.profText)
+    PopupWithForm.saveTextToButton()
+    UserRepository.update(user)
+    PopupWithForm.clearSaveTextToButton()
 }
 const inputsPopupInfo = ['.popup__prof-name', '.popup__prof-text']
 
@@ -134,7 +142,10 @@ infoPopupButton.addEventListener('click', infoPopup.open.bind(infoPopup))
 const addCardPopupSelector = '.popup-mesto'
 
 const addCardSubmitHandler = (data) => {
-    section.addItem(data.cardName, data.cardLink)
+    section.addItem(data.cardName, data.cardLink, null, null)
+    PopupWithForm.saveTextToButton()
+    CardRepository.add(data.cardName, data.cardLink)
+    PopupWithForm.clearSaveTextToButton('Создать')
 }
 
 const addCardInitPopup = (selector) => {
@@ -179,8 +190,10 @@ const editAvatarBeforeCloseCallback = (selector) => {
 }
 
 const editAvatarSubmitHandler = (data) => {
-    //TODO или класс добавление или в классе PopupEditAvatar сделать добавление ссылки
-
+    UserRepository.updateAvatar(data)
+    PopupWithForm.saveTextToButton()
+    userInfo.setAvatar(data)
+    PopupWithForm.clearSaveTextToButton()
 }
 
 const editAvatarSelector = '.popup-edit-avatar'

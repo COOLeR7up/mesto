@@ -1,5 +1,6 @@
 import Popup from "./Popup.js";
 import CardRepository from "../API/Repository/CardRepository.js";
+import UserRepository from "../API/Repository/UserRepository";
 
 
 export default class PopupWithForm extends Popup {
@@ -8,9 +9,6 @@ export default class PopupWithForm extends Popup {
         this.selector = document.querySelector(selector)
 
         this.submitCallback = data => {
-
-            CardRepository.add(data.cardName, data.cardLink)
-
             submitCallback(data)
         }
 
@@ -25,7 +23,7 @@ export default class PopupWithForm extends Popup {
         this.clearErrors = clearErrors
     }
 
-_getInputValues() {
+    _getInputValues() {
 
         const formValues = {};
 
@@ -66,5 +64,24 @@ _getInputValues() {
         super.close()
 
         this.beforeCloseCallback(this.selector)
+    }
+
+
+    static saveTextToButton() {
+        const buttonLabel = '.popup__button-save'
+        document.querySelectorAll(buttonLabel).forEach(i => {
+            i.textContent = 'Сохранение...'
+        })
+    }
+
+
+    static clearSaveTextToButton(str = 'Сохранить') {
+        const buttonLabel = '.popup__button-save'
+        document.querySelectorAll(buttonLabel).forEach(i => {
+            setTimeout(() => {
+                i.textContent = str
+            }, 1000)
+
+        })
     }
 }

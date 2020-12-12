@@ -1,5 +1,6 @@
 import Popup from "./Popup.js";
 import {clearErrors} from "../pages";
+import PopupWithForm from "./PopupWithForm";
 
 export default class PopupEditAvatar extends Popup {
     constructor(selector, initCallback, beforeCloseCallback, submitCallback, clearErrors) {
@@ -31,7 +32,7 @@ export default class PopupEditAvatar extends Popup {
 
         // submit
         const buttonSave = this.selector.querySelector('.popup__button-save')
-        console.log(buttonSave)
+
         buttonSave.addEventListener('click', this._submitClose())
 
     }
