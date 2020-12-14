@@ -1,6 +1,4 @@
 import Popup from "./Popup.js";
-import CardRepository from "../API/Repository/CardRepository.js";
-import UserRepository from "../API/Repository/UserRepository";
 
 
 export default class PopupWithForm extends Popup {
@@ -14,6 +12,7 @@ export default class PopupWithForm extends Popup {
 
         this.beforeCloseCallback = beforeCloseCallback ?? function () {}
 
+        this.initCallback = initCallback
         initCallback(this.selector)
 
         this.valueInputs = valueInputs
@@ -55,6 +54,8 @@ export default class PopupWithForm extends Popup {
 
     open() {
         super.open()
+
+        this.initCallback()
 
         this.clearErrors()
     }

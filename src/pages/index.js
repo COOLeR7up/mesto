@@ -16,17 +16,18 @@ import {
 } from "../utils/constants";
 import Card from "../components/Card";
 import PopupEditAvatar from "../components/PopupEditAvatar.js";
-import CardRepository from "../API/Repository/CardRepository.js";
-import UserRepository from "../API/Repository/UserRepository.js";
 
 import { generateId } from "../utils/pure";
 import UserModel from "../API/Model/UserModel";
+import Api from "../components/Api";
 
 // UserInfo
 const userInfoSelectors = {nameSelector: '.profile__name', jobSelector: '.profile__text', photoSelector: '.profile__avatar'}
 const userInfo = new UserInfo(userInfoSelectors)
 
-UserRepository.get()
+const api = new Api()
+
+api.get()
     .then(res => res.json())
     .then(result => {
         const user = {
@@ -38,6 +39,7 @@ UserRepository.get()
         userInfo.setAvatar(result.avatar)
         userInfo.setId(result._id)
     })
+    .catch(err => console.log(err))
 
 
 
@@ -60,14 +62,14 @@ const section = new Section({
 }, cardsList)
 
 // fetch card
-CardRepository.getAll()
+api.getAll()
     .then(res => res.json())
     .then((result) => {
         result.forEach(item => {
             section.addItem(item.name, item.link, item.likes, item._id)
-
         })
     })
+    .catch(err => console.log(err))
 
 
 
@@ -120,7 +122,18 @@ const infoSubmitHandler = (data) => {
 
     const user = new UserModel(data.profName, data.profText)
     PopupWithForm.saveTextToButton()
-    UserRepository.update(user)
+
+    api.update(user)
+        .then(res => {
+            if (res.ok) {
+
+                return res.json();
+            }
+
+            return Promise.reject(`Ошибка: ${res.status}`);
+        })
+        .catch(err => console.log(err))
+
     PopupWithForm.clearSaveTextToButton()
 }
 const inputsPopupInfo = ['.popup__prof-name', '.popup__prof-text']
@@ -144,7 +157,17 @@ const addCardPopupSelector = '.popup-mesto'
 const addCardSubmitHandler = (data) => {
     section.addItem(data.cardName, data.cardLink, null, null)
     PopupWithForm.saveTextToButton()
-    CardRepository.add(data.cardName, data.cardLink)
+
+    api.add(data.cardName, data.cardLink)
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+
+            return Promise.reject(`Ошибка: ${res.status}`);
+        })
+        .catch(err => console.log(err))
+
     PopupWithForm.clearSaveTextToButton('Создать')
 }
 
@@ -190,7 +213,17 @@ const editAvatarBeforeCloseCallback = (selector) => {
 }
 
 const editAvatarSubmitHandler = (data) => {
-    UserRepository.updateAvatar(data)
+    api.updateAvatar(data)
+        .then(res => {
+        if (res.ok) {
+
+            return res.json();
+        }
+
+        return Promise.reject(`Ошибка: ${res.status}`);
+    })
+        .catch(err => console.log(err))
+
     PopupWithForm.saveTextToButton()
     userInfo.setAvatar(data)
     PopupWithForm.clearSaveTextToButton()

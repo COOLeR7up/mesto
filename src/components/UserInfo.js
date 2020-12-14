@@ -1,6 +1,3 @@
-import UserRepository from "../API/Repository/UserRepository.js";
-import UserModel from "../API/Model/UserModel.js";
-
 export default class UserInfo {
     constructor({nameSelector, jobSelector, photoSelector}) {
         this.nameSelector = document.querySelector(nameSelector)

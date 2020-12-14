@@ -1,9 +1,9 @@
 import PopupCardDelite from "./PopupCardDelete.js";
 import PopupCardDelete from "./PopupCardDelete.js";
 import {clearErrors} from "../pages";
-import CardRepository from "../API/Repository/CardRepository.js";
 import {generateId} from "../utils/pure";
 import UserInfo from "./UserInfo";
+import Api from "./Api";
 
 export default class Card {
     constructor(title, imgLink, likes, id, actualId, template, handlerCardClick) {
@@ -37,9 +37,7 @@ export default class Card {
     }
 
     _likeDefault(actualId) {
-        console.log(this._likes)
         this._likes.forEach(i => {
-            console.log(i._id + ' = ' + actualId)
             if (i._id == actualId) {
                 const socialLikeTarget = this._card.querySelector('.element__social-like');
                 socialLikeTarget.classList.toggle('element__social-likeactiv');
@@ -53,6 +51,8 @@ export default class Card {
         socialLikeTarget.classList.toggle('element__social-likeactiv');
         const cardElem = '.element__group'
 
+        const api = new Api()
+
         document.querySelectorAll(cardElem).forEach(card => {
             if (card.getAttribute('_id') == this._id) {
                 const likesSelector = '.element__social-like-score'
@@ -63,9 +63,26 @@ export default class Card {
 
                 if (isActive) {
                     like.textContent = like.textContent - 1
-                    CardRepository.deleteLike(this._id)
+                    api.deleteLike(this._id)
+                        .then(res => {
+                            if (res.ok) {
+                                return res.json()
+                            }
+
+                            return Promise.reject(`Ошибка: ${res.status}`)
+                        })
+                        .catch(err => console.log(err))
                 } else {
-                    CardRepository.addLike(this._id)
+                    api.addLike(this._id)
+                        .then(res => {
+                            if (res.ok) {
+                                return res.json()
+                            }
+
+                            return Promise.reject(`Ошибка: ${res.status}`)
+                        })
+                        .catch(err => console.log(err))
+
                     like.textContent = like.textContent - 0 + 1
                 }
             }
