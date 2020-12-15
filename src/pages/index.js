@@ -25,24 +25,6 @@ import Api from "../components/Api";
 const userInfoSelectors = {nameSelector: '.profile__name', jobSelector: '.profile__text', photoSelector: '.profile__avatar'}
 const userInfo = new UserInfo(userInfoSelectors)
 
-const api = new Api()
-
-api.get()
-    .then(res => res.json())
-    .then(result => {
-        const user = {
-            name: result.name,
-            job: result.about,
-            id: result._id
-        }
-        userInfo.setUserInfo(user)
-        userInfo.setAvatar(result.avatar)
-        userInfo.setId(result._id)
-    })
-    .catch(err => console.log(err))
-
-
-
 // Initial default cards
 
 // Photo View
@@ -53,27 +35,22 @@ function handlerCardClick() {
     imageViewPopup.open(this._imgLink, this._title)
 }
 const section = new Section({
-    renderer: (title, link, likes, id) => {
+    renderer: (title, link, likes, id, ownerId) => {
         const templateSelector = '.element-template'
-        const card = new Card(title, link, likes, id, userInfo.id, templateSelector, handlerCardClick, clearErrors)
+        const card = new Card(title, link, likes, id, userInfo.id, templateSelector, handlerCardClick, api, ownerId)
 
         return card
     }
 }, cardsList)
 
-// fetch card
-api.getAll()
-    .then(res => res.json())
-    .then((result) => {
-        result.forEach(item => {
-            section.addItem(item.name, item.link, item.likes, item._id)
-        })
-    })
+
+const api = new Api()
+
+const fetchInfo = api.get(userInfo)
+const fetchCards = api.getAll(section)
+
+Promise.all([fetchCards, fetchInfo])
     .catch(err => console.log(err))
-
-
-
-
 
 // Validators
 const validation = (settings, content) => {
@@ -159,14 +136,6 @@ const addCardSubmitHandler = (data) => {
     PopupWithForm.saveTextToButton()
 
     api.add(data.cardName, data.cardLink)
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-
-            return Promise.reject(`Ошибка: ${res.status}`);
-        })
-        .catch(err => console.log(err))
 
     PopupWithForm.clearSaveTextToButton('Создать')
 }

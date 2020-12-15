@@ -1,14 +1,18 @@
-import PopupCardDelite from "./PopupCardDelete.js";
 import PopupCardDelete from "./PopupCardDelete.js";
 import {clearErrors} from "../pages";
 import {generateId} from "../utils/pure";
-import UserInfo from "./UserInfo";
-import Api from "./Api";
 
 export default class Card {
-    constructor(title, imgLink, likes, id, actualId, template, handlerCardClick) {
-        this._isRubbish = id != undefined
+    constructor(title, imgLink, likes, id, actualId, template, handlerCardClick, api, ownerId) {
 
+        this._isRubbish = !((ownerId == undefined) || (actualId == ownerId))
+        console.log('id: '+id)
+        console.log('owner id: '+ownerId)
+        console.log('actual id: ' + actualId)
+        console.log('(ownerId == undefined) || (actualId != ownerId)')
+        console.log('result' + (ownerId == undefined) || (actualId != ownerId))
+
+        this.api = api
         this._title = title
         this._likes = likes ?? []
         this._id = id ?? generateId()
@@ -31,6 +35,8 @@ export default class Card {
             card.remove();
         }
 
+        this.api.cardDelete(this._id)
+
         const popupCardDelete = new PopupCardDelete(deleteCardSelector, deleteCard)
         card.addEventListener('click', popupCardDelete.open());
         clearErrors()
@@ -51,8 +57,6 @@ export default class Card {
         socialLikeTarget.classList.toggle('element__social-likeactiv');
         const cardElem = '.element__group'
 
-        const api = new Api()
-
         document.querySelectorAll(cardElem).forEach(card => {
             if (card.getAttribute('_id') == this._id) {
                 const likesSelector = '.element__social-like-score'
@@ -63,26 +67,9 @@ export default class Card {
 
                 if (isActive) {
                     like.textContent = like.textContent - 1
-                    api.deleteLike(this._id)
-                        .then(res => {
-                            if (res.ok) {
-                                return res.json()
-                            }
-
-                            return Promise.reject(`Ошибка: ${res.status}`)
-                        })
-                        .catch(err => console.log(err))
+                    this.api.deleteLike(this._id)
                 } else {
-                    api.addLike(this._id)
-                        .then(res => {
-                            if (res.ok) {
-                                return res.json()
-                            }
-
-                            return Promise.reject(`Ошибка: ${res.status}`)
-                        })
-                        .catch(err => console.log(err))
-
+                    this.api.addLike(this._id)
                     like.textContent = like.textContent - 0 + 1
                 }
             }
