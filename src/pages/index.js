@@ -15,7 +15,7 @@ import {
     settingInfoValidation
 } from "../utils/constants";
 import Card from "../components/Card";
-import PopupEditAvatar from "../components/PopupEditAvatar.js";
+
 
 import { generateId } from "../utils/pure";
 import UserModel from "../API/Model/UserModel";
@@ -36,8 +36,30 @@ function handlerCardClick() {
 }
 const section = new Section({
     renderer: (title, link, likes, id, ownerId) => {
+
+        const fetchCardDelete = (id) => {
+            api.cardDelete(id)
+                .catch(err => console.log(err))
+        }
+
+        const fetchDeleteLike = (id) => {
+            api.deleteLike(id)
+                .catch(err => console.log(err))
+        }
+
+        const fetchAddLike = (id) => {
+            api.addLike(id)
+                .catch(err => console.log(err))
+        }
+
+        const cardFetch = {
+            fetchCardDelete,
+            fetchDeleteLike,
+            fetchAddLike
+        }
+
         const templateSelector = '.element-template'
-        const card = new Card(title, link, likes, id, userInfo.id, templateSelector, handlerCardClick, api, ownerId)
+        const card = new Card(title, link, likes, id, userInfo.id, templateSelector, handlerCardClick, ownerId, cardFetch)
 
         return card
     }
@@ -46,8 +68,30 @@ const section = new Section({
 
 const api = new Api()
 
-const fetchInfo = api.get(userInfo)
-const fetchCards = api.getAll(section)
+const fetchInfo = api.get()
+    .then(result => {
+        const user = {
+            name: result.name,
+            job: result.about,
+            id: result._id
+        }
+
+        userInfo.setUserInfo(user)
+        userInfo.setAvatar(result.avatar)
+        userInfo.setId(result._id)
+        return
+    })
+    .catch(err => console.log(err))
+
+const fetchCards = api.getAll()
+    .then((result) => {
+        result = result.reverse()
+        result.forEach(item => {
+            section.addItem(item.name, item.link, item.likes, item._id, item.owner._id)
+        })
+        return
+    })
+    .catch(err => console.log(err))
 
 Promise.all([fetchCards, fetchInfo])
     .catch(err => console.log(err))
@@ -98,20 +142,14 @@ const infoSubmitHandler = (data) => {
     userInfo.setUserInfo({name: data.profName, job: data.profText})
 
     const user = new UserModel(data.profName, data.profText)
+
     PopupWithForm.saveTextToButton()
 
     api.update(user)
-        .then(res => {
-            if (res.ok) {
-
-                return res.json();
-            }
-
-            return Promise.reject(`Ошибка: ${res.status}`);
-        })
         .catch(err => console.log(err))
-
-    PopupWithForm.clearSaveTextToButton()
+        .finally(() => {
+            PopupWithForm.clearSaveTextToButton()
+        })
 }
 const inputsPopupInfo = ['.popup__prof-name', '.popup__prof-text']
 
@@ -136,8 +174,11 @@ const addCardSubmitHandler = (data) => {
     PopupWithForm.saveTextToButton()
 
     api.add(data.cardName, data.cardLink)
+        .catch(err => console.log(err))
 
     PopupWithForm.clearSaveTextToButton('Создать')
+
+    setTimeout(() => {location.href = location.href}, 500)
 }
 
 const addCardInitPopup = (selector) => {
@@ -149,8 +190,9 @@ const addCardInitPopup = (selector) => {
 
 const addCardBeforeCloseCallback = (selector) => {
     // inputs clear
-    selector.querySelectorAll('input')[0].value = ''
-    selector.querySelectorAll('input')[1].value = ''
+    const formSelector = '.popup-mesto__content'
+    console.log(selector.querySelector(formSelector))
+    selector.querySelector(formSelector).reset()
 }
 
 const inputsPopupAddCard = ['.popup-mesto__prof-name', '.popup-mesto__prof-text']
@@ -178,30 +220,26 @@ const editAvatarInitPopup = (selector) => {
 
 
 const editAvatarBeforeCloseCallback = (selector) => {
-    selector.querySelectorAll('input')[0].value = ''
+    const formSelector = '.popup-edit-avatar__content'
+    selector.querySelector(formSelector).reset()
 }
 
 const editAvatarSubmitHandler = (data) => {
-    api.updateAvatar(data)
-        .then(res => {
-        if (res.ok) {
 
-            return res.json();
-        }
-
-        return Promise.reject(`Ошибка: ${res.status}`);
-    })
+    api.updateAvatar(data.avatarImg)
         .catch(err => console.log(err))
 
     PopupWithForm.saveTextToButton()
-    userInfo.setAvatar(data)
+    userInfo.setAvatar(data.avatarImg)
     PopupWithForm.clearSaveTextToButton()
 }
 
 const editAvatarSelector = '.popup-edit-avatar'
+const imputEditAvatarPopup = ['.popup-edit-avatar__input']
 
-const popupEditAvatar = new PopupEditAvatar(
+const popupEditAvatar = new PopupWithForm(
     editAvatarSelector,
+    imputEditAvatarPopup,
     editAvatarInitPopup.bind(this),
     editAvatarBeforeCloseCallback.bind(this),
     editAvatarSubmitHandler,

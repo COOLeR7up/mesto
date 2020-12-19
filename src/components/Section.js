@@ -9,6 +9,8 @@ export default class Section {
 
 
     addItem(title, link, likes, id, ownerId) {
+
+
         const card = this.renderer(title, link, likes, id, ownerId)
 
         this.selector.prepend(card.generate())

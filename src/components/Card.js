@@ -3,22 +3,22 @@ import {clearErrors} from "../pages";
 import {generateId} from "../utils/pure";
 
 export default class Card {
-    constructor(title, imgLink, likes, id, actualId, template, handlerCardClick, api, ownerId) {
+    constructor(title, imgLink, likes, id, actualId, template, handlerCardClick, ownerId
+                , {fetchCardDelete, fetchDeleteLike, fetchAddLike}) {
 
         this._isRubbish = !((ownerId == undefined) || (actualId == ownerId))
-        console.log('id: '+id)
-        console.log('owner id: '+ownerId)
-        console.log('actual id: ' + actualId)
-        console.log('(ownerId == undefined) || (actualId != ownerId)')
-        console.log('result' + (ownerId == undefined) || (actualId != ownerId))
 
-        this.api = api
         this._title = title
         this._likes = likes ?? []
         this._id = id ?? generateId()
         this._imgLink = imgLink
         this._template = template
         this._card = document.querySelector(this._template).content.cloneNode(true);
+
+        // fetch
+        this.fetchCardDelete = fetchCardDelete
+        this.fetchDeleteLike = fetchDeleteLike
+        this.fetchAddLike = fetchAddLike
 
         this._photo = this._card.querySelector('.element__foto')
 
@@ -35,7 +35,7 @@ export default class Card {
             card.remove();
         }
 
-        this.api.cardDelete(this._id)
+        this.fetchCardDelete(this._id)
 
         const popupCardDelete = new PopupCardDelete(deleteCardSelector, deleteCard)
         card.addEventListener('click', popupCardDelete.open());
@@ -67,9 +67,9 @@ export default class Card {
 
                 if (isActive) {
                     like.textContent = like.textContent - 1
-                    this.api.deleteLike(this._id)
+                    this.fetchDeleteLike(this._id)
                 } else {
-                    this.api.addLike(this._id)
+                    this.fetchAddLike(this._id)
                     like.textContent = like.textContent - 0 + 1
                 }
             }

@@ -6,7 +6,7 @@ export default class Api {
 
     }
 
-    get(userInfo) {
+    get() {
         return fetch( baseUrl + '/users/me', {
             headers: {
                 authorization: token
@@ -17,23 +17,10 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${result.status}`);
             })
-            .then(result => {
-                const user = {
-                    name: result.name,
-                    job: result.about,
-                    id: result._id
-                }
-
-                userInfo.setUserInfo(user)
-                userInfo.setAvatar(result.avatar)
-                userInfo.setId(result._id)
-                return
-            })
-            .catch(err => console.log(err))
     }
 
 
-    getAll(section) {
+    getAll() {
         return fetch(baseUrl + '/cards', {
             headers: {
                 authorization: token
@@ -44,14 +31,6 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${result.status}`);
             })
-            .then((result) => {
-                result = result.reverse()
-                result.forEach(item => {
-                    section.addItem(item.name, item.link, item.likes, item._id, item.owner._id)
-                })
-                return
-            })
-            .catch(err => console.log(err))
     }
 
 
@@ -73,7 +52,6 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
-            .catch(err => console.log(err))
     }
 
 
@@ -97,7 +75,6 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
-            .catch(err => console.log(err))
     }
 
 
@@ -120,7 +97,6 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
-            .catch(err => console.log(err))
     }
 
 
@@ -143,7 +119,6 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
-            .catch(err => console.log(err))
     }
 
 
@@ -167,7 +142,6 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
-            .catch(err => console.log(err))
     }
 
 
@@ -190,7 +164,6 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
-            .catch(err => console.log(err))
     }
 
 }
