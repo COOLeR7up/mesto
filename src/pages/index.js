@@ -16,9 +16,6 @@ import {
 } from "../utils/constants";
 import Card from "../components/Card";
 
-
-import { generateId } from "../utils/pure";
-import UserModel from "../API/Model/UserModel";
 import Api from "../components/Api";
 
 // UserInfo
@@ -138,14 +135,14 @@ const initInfo = () => {
 }
 
 
-const infoSubmitHandler = (data) => {
+const infoSubmitHandler = (data, close) => {
     userInfo.setUserInfo({name: data.profName, job: data.profText})
 
-    const user = new UserModel(data.profName, data.profText)
+    const user = {name: data.profName, job: data.profText}
 
     PopupWithForm.saveTextToButton()
 
-    api.update(user)
+    api.update(user, close)
         .catch(err => console.log(err))
         .finally(() => {
             PopupWithForm.clearSaveTextToButton()
@@ -169,16 +166,17 @@ infoPopupButton.addEventListener('click', infoPopup.open.bind(infoPopup))
 // AddCard
 const addCardPopupSelector = '.popup-mesto'
 
-const addCardSubmitHandler = (data) => {
+const addCardSubmitHandler = (data, close) => {
     section.addItem(data.cardName, data.cardLink, null, null)
     PopupWithForm.saveTextToButton()
 
-    api.add(data.cardName, data.cardLink)
+    api.add(data.cardName, data.cardLink, close)
         .catch(err => console.log(err))
+        .finally(() => {
+            PopupWithForm.clearSaveTextToButton('Создать')
+        })
 
-    PopupWithForm.clearSaveTextToButton('Создать')
-
-    setTimeout(() => {location.href = location.href}, 500)
+    setTimeout(() => {location.href = location.href}, 2000)
 }
 
 const addCardInitPopup = (selector) => {
@@ -224,14 +222,16 @@ const editAvatarBeforeCloseCallback = (selector) => {
     selector.querySelector(formSelector).reset()
 }
 
-const editAvatarSubmitHandler = (data) => {
-
-    api.updateAvatar(data.avatarImg)
-        .catch(err => console.log(err))
+const editAvatarSubmitHandler = (data, close) => {
 
     PopupWithForm.saveTextToButton()
     userInfo.setAvatar(data.avatarImg)
-    PopupWithForm.clearSaveTextToButton()
+
+    api.updateAvatar(data.avatarImg, close)
+        .catch(err => console.log(err))
+        .finally(() => {
+            PopupWithForm.clearSaveTextToButton()
+        })
 }
 
 const editAvatarSelector = '.popup-edit-avatar'

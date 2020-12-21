@@ -55,7 +55,7 @@ export default class Api {
     }
 
 
-     add(name, link) {
+     add(name, link, close) {
         return fetch(baseUrl + '/cards', {
             method: 'POST',
             headers: {
@@ -75,6 +75,11 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
+
+            .then(() => {
+                close()
+            })
+
     }
 
 
@@ -122,7 +127,7 @@ export default class Api {
     }
 
 
-     update(user) {
+     update(user, close) {
         return fetch(baseUrl + '/users/me', {
             method: 'PATCH',
             headers: {
@@ -142,10 +147,15 @@ export default class Api {
 
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
+
+            .then(() => {
+                close()
+            })
+
     }
 
 
-     updateAvatar(avatar) {
+     updateAvatar(avatar, close) {
         return fetch(baseUrl + '/users/me/avatar', {
             method: 'PATCH',
             headers: {
@@ -163,6 +173,10 @@ export default class Api {
                 }
 
                 return Promise.reject(`Ошибка: ${res.status}`);
+            })
+
+            .then(() => {
+                close()
             })
     }
 

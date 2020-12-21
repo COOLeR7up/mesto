@@ -6,8 +6,9 @@ export default class PopupWithForm extends Popup {
         super(selector)
         this.selector = document.querySelector(selector)
 
-        this.submitCallback = data => {
-            submitCallback(data)
+        this.submitCallback = (data, close) => {
+
+            submitCallback(data, close)
         }
 
         this.beforeCloseCallback = beforeCloseCallback ?? function () {}
@@ -47,8 +48,7 @@ export default class PopupWithForm extends Popup {
 
     _submitClose()  {
         return () => {
-            this.submitCallback(this._getInputValues())
-            this.close()
+            this.submitCallback(this._getInputValues(), this.close.bind(this))
         }
     }
 
@@ -81,7 +81,7 @@ export default class PopupWithForm extends Popup {
         document.querySelectorAll(buttonLabel).forEach(i => {
             setTimeout(() => {
                 i.textContent = str
-            }, 1000)
+            }, 3000)
 
         })
     }
